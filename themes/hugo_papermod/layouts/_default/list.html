@@ -1,0 +1,36 @@
+{{- define "main" }}
+
+{{- $pages := union .RegularPages .Sections }}
+
+{{- if .IsHome }}
+{{- $pages = first 3 (where site.RegularPages "Section" "tech_writings") }}
+{{- partial "index_profile.html" . }}
+{{- if $pages }}
+<hr>
+<p class="latest_writings">Recent Writings: </p>
+{{- end }}
+{{- end }}
+
+{{- if not .IsHome | and .Title }}
+<p class="page-header">{{ .Title }}</p>
+{{- end }}
+
+{{- range $pages }}
+<a aria-label="post link to {{ .Title }}" href="{{ .Permalink }}">
+  <div class="post-entry">
+    <div class="entry-header">
+      <p class="entry-title">{{- .Title }}</p>
+      {{- if (and .Params.arabic_date .Params.arabic_author)}}
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
+        <p class="post-date">{{ .Params.arabic_date }}</p>
+      </div>
+      {{ else }}
+      <p class="post-date">{{ .Date | time.Format (site.Params.DateFormat) }}</p>
+      {{- end }}
+    </div>
+    <p class="entry-description">{{ .Description }}</p>
+  </div>
+</a>
+{{- end }}
+
+{{- end }}

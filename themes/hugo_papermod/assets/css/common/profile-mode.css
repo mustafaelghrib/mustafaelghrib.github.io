@@ -1,0 +1,29 @@
+.buttons, .main .profile {
+    display: flex;
+    justify-content: center;
+}
+
+.main .profile {
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.profile .profile_inner .profile_title {
+    padding: 6px 0;
+}
+
+.profile .profile_inner .profile_subtitle {
+    padding: 6px 0;
+}
+
+.profile .profile_inner .profile_description {
+    padding: 6px 0;
+    text-align: justify;
+    color: #9b9b9b;
+}
+
+.profile img {
+    display: inline-table;
+    border-radius: 50%;
+}

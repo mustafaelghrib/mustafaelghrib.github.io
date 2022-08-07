@@ -1,0 +1,25 @@
+{{- define "main" }}
+
+<article class="post-single">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if (and .Params.arabic_date .Params.arabic_author)}}
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
+      <p class="post-date">{{ .Params.arabic_author }} - {{ .Params.arabic_date }}</p>
+    </div>
+    {{ else }}
+    <p class="post-date">{{ .Params.author }} - {{ .Date | time.Format (site.Params.DateFormat) }}</p>
+    {{- end }}
+    <hr>
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+</article>
+
+{{- end }}
