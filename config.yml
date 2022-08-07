@@ -1,0 +1,60 @@
+baseURL: 'https://mstva.github.io'
+languageCode: 'en-us'
+title: 'mstva'
+theme: 'hugo_papermod'
+
+params:
+  author: "mstva"
+  hideFooter: true
+  ShowCodeCopyButtons: true
+  DateFormat: "02 Jan 2006"
+
+  profileMode:
+    enabled: true
+    title: "Mustafa A. Ghrib"
+    subtitle: "Backend Engineer - Python/Django - TypeScript/Node.js"
+    description: "A backend engineer graduated from computer engineering school, 
+    worked as a freelancer on Upwork after graduation and became a 
+    Top-Rated Plus with 100% job success in less than one year! Get 
+    a chance to work with clients from around the globe from Ireland, 
+    Canada and the United States. Gain clients' trust by expanding the 
+    contracts for a long-term relationship for more than one year! 
+    While delivering high-quality and professional work with good 
+    English communication and flexible time and timezone."
+    imageUrl: "https://avatars.githubusercontent.com/u/20958970?v=4"
+    imageTitle: mstva_img
+    imageWidth: 120
+    imageHeight: 120
+
+  socialIcons:
+    - name: twitter
+      url: "https://twitter.com/MustafaAbdulluh"
+    - name: github
+      url: "https://github.com/mstva"
+    - name: linkedin
+      url: "https://linkedin.com/in/mustafaabdulluh"
+    - name: upwork
+      url: "https://www.upwork.com/freelancers/~01827d2d94f6d3cbd6"
+
+permalinks:
+  tech_writings: ':filename/'
+  كتابتي_بالعربية: ':filename/'
+  projects: 'projects/:filename/'
+
+menu:
+  main:
+    - name: "tech_writings"
+      weight: 1
+      url: "tech_writings/"
+
+    - name: "كتابتي_بالعربية"
+      weight: 2
+      url: "/كتابتي_بالعربية"
+
+    - name: "projects"
+      weight: 3
+      url: "projects/"
+
+    - name: "resume"
+      weight: 4
+      url: "resume/Backend_Engineer_Mustafa_Abdallah_Mohamed.pdf"
