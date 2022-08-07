@@ -38,7 +38,7 @@ params:
 
 permalinks:
   tech_writings: ':filename/'
-  كتابتي_بالعربية: ':filename/'
+  arabic_writings: ':filename/'
   projects: 'projects/:filename/'
 
 menu:
@@ -49,7 +49,7 @@ menu:
 
     - name: "كتابتي_بالعربية"
       weight: 2
-      url: "/كتابتي_بالعربية"
+      url: "arabic_writings/"
 
     - name: "projects"
       weight: 3
