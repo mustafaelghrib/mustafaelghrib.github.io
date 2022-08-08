@@ -38,3 +38,10 @@ description: إسكندرية والبحر والسينما ..
 
 عن فيلم "إسكندرية ليه؟" ليوسف شاهين ١٩٧٩
 
+{{< figure src="/images/alexandria_why/alexandria_why_poster.jpeg" width="100%" >}}
+{{< figure src="/images/alexandria_why/hamlet_act_scene.jpeg" width="100%" >}}
+{{< figure src="/images/alexandria_why/the_mother_and_son_scene.jpeg" width="100%" >}}
+{{< figure src="/images/alexandria_why/the_father_and_son_scene.jpeg" width="100%" >}}
+{{< figure src="/images/alexandria_why/the_friends_scene.jpeg" width="100%" >}}
+
+
