@@ -10,4 +10,8 @@ description: من بعيد ترى القلعة مآذانها شامخة في ا
 المسجد الكبير زين سقفه بقوارير من نور ونقشت الحوائط بآيات من الذكر الحكيم،
 ومن الأعلى تبدو مصر القديمة كلوحة عشوائية، تلك المآذان الصفراء ترى فيها عبق التاريخ، كأنها تنتظر يوم غير معلوم حيث تفنى الارض وتبقي دُنيا الله لذات الله ..
 
+![The castle](/images/the_castle/the_castle.jpg)
+![The mosque roof](/images/the_castle/the_mosque_roof.jpeg)
+![The old Egypt](/images/the_castle/the_old_egypt.jpeg)
+
 القلعة، القاهرة، مصر
