@@ -47,7 +47,7 @@ menu:
       weight: 1
       url: "tech_writings/"
 
-    - name: "كتابتي_بالعربية"
+    - name: "كتاباتي_بالعربية"
       weight: 2
       url: "arabic_writings/"
 
