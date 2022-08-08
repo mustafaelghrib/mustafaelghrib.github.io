@@ -11,12 +11,15 @@
     {{- /* Title */}}
     <title>
         {{ if .IsHome }}
-        {{ site.Title }}
+        {{ site.Params.author }} (@{{ site.Title }})
         {{ else }}
         {{ if .Title }}
         {{ .Title }}
         {{ if .Params.arabic_author }} | {{ .Params.arabic_author }} {{ end }}
+        {{ if .Params.arabic_date }} | {{ .Params.arabic_date }} {{ end }}
         {{ if .Params.author }} | {{ .Params.author }} {{ end }}
+        {{ if and .IsPage (not .Params.arabic_date) }} | {{ .Date | time.Format (site.Params.DateFormat) }} {{ end }}
+        {{ if and .IsSection .Params.arabic_author }} | {{ .Params.arabic_author }} {{ else }} | {{ site.Params.author }} {{ end }}
         {{ end }}
         {{ end }}
     </title>

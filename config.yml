@@ -4,7 +4,7 @@ title: 'mstva'
 theme: 'hugo_papermod'
 
 params:
-  author: "mstva"
+  author: "Mustafa A. Ghrib"
   hideFooter: true
   ShowCodeCopyButtons: true
   DateFormat: "02 Jan 2006"
