@@ -9,7 +9,17 @@
     {{- end }}
 
     {{- /* Title */}}
-    <title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+    <title>
+        {{ if .IsHome }}
+        {{ site.Title }}
+        {{ else }}
+        {{ if .Title }}
+        {{ .Title }}
+        {{ if .Params.arabic_author }} | {{ .Params.arabic_author }} {{ end }}
+        {{ if .Params.author }} | {{ .Params.author }} {{ end }}
+        {{ end }}
+        {{ end }}
+    </title>
 
     {{- /* Meta */}}
     {{- if .IsHome }}
@@ -20,7 +30,7 @@
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
     {{- end }}
     <meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
-    {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
+    {{- .Description | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
     <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
     {{- if site.Params.analytics.google.SiteVerificationTag }}
