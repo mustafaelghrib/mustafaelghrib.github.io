@@ -62,4 +62,4 @@ menu:
 
     - name: "hire_me"
       weight: 0
-      url: "prices/"
+      url: "hire/"
