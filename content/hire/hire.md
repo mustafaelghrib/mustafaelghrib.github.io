@@ -5,9 +5,9 @@ author: Mostafa A.
 ---
 
 ## Contents:
-- [🎁 Services]({{< ref "hire.md#services" >}}) => Backend, Chatbots and Cloud Development.
-- [💵 Prices]({{< ref "hire.md#prices" >}}) => Hourly, Weekly and Monthly Prices Plans!
-- [👨‍💻 About]({{< ref "hire.md#about" >}}) => Why you should hire me?
+- [🎁 Services]({{< ref "hire.md#services" >}}) &nbsp; → Backend, Chatbots and Cloud Development.
+- [💵 Prices]({{< ref "hire.md#prices" >}}) &emsp;&nbsp; → Hourly, Weekly and Monthly Prices Plans!
+- [👨‍💻 About]({{< ref "hire.md#about" >}}) &emsp;&nbsp; → Why you should hire me?
 
 ---
 
@@ -63,7 +63,7 @@ Hello everyone 👋 I am a Full-Stack developer 👨‍💻 who loves developing
 ### 🎁 What you will get?
 - ✅ The source code.
 - ✅ A real-live deployed version to test yourself.
-- ✅ FREE support based on your plan..
+- ✅ FREE support based on your plan.
 
 ### ⚒ How do I work with my clients and manage the project?
 - 📌 I use Agile Method and Jira for project management.
