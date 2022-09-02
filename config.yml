@@ -40,6 +40,7 @@ permalinks:
   tech_writings: ':filename/'
   arabic_writings: ':filename/'
   projects: 'projects/:filename/'
+  hire_me: ':filename/'
 
 menu:
   main:
@@ -58,3 +59,7 @@ menu:
     - name: "resume"
       weight: 4
       url: "resume/Backend_Engineer_Mustafa_Abdallah_Mohamed.pdf"
+
+    - name: "hire_me"
+      weight: 0
+      url: "prices/"
