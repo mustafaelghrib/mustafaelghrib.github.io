@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "_" " " | title }}"
 date: {{ .Date }}
-author: Mustafa A. Ghrib
+author: Mustafa Abdallah
 description:
 ---

@@ -2,7 +2,7 @@
 title: "القلعة"
 date: 2020-11-02T23:55:12+02:00
 arabic_date: ٢ نوفمبر ٢٠٢٠
-arabic_author: مصطفى غريب
+arabic_author: مصطفى عبدالله
 description: من بعيد ترى القلعة مآذانها شامخة في السماء ..
 ---
 

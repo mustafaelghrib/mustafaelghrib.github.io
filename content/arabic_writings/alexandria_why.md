@@ -2,7 +2,7 @@
 title: "إسكندرية ليه؟"
 date: 2019-07-15T19:16:10+02:00
 arabic_date: ١٥ يوليو ٢٠١٩
-arabic_author: مصطفى غريب
+arabic_author: مصطفى عبدالله
 description: إسكندرية والبحر والسينما ..
 ---
 

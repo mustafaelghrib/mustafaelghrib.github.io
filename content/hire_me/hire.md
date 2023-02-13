@@ -1,7 +1,7 @@
 ---
 title: "My Freelance Services and Prices"
 date: 2022-09-02
-author: Mostafa A.
+author: Mustafa Abdallah
 ---
 
 ## Contents:

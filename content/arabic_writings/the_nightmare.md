@@ -2,7 +2,7 @@
 title: "الكابوس!"
 date: 2018-11-09T19:11:56+02:00
 arabic_date: ٩ نوفمبر ٢٠١٨
-arabic_author: مصطفى غريب
+arabic_author: مصطفى عبدالله
 description: متي تأتي لحظة الموت، كي استيقظ مفزوعاً!
 ---
 
