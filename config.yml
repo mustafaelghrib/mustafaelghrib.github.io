@@ -13,18 +13,11 @@ params:
     enabled: true
     title: "Mustafa Abdallah"
     subtitle: "Junior Python Backend Engineer"
-    description: "As a backend engineer with 2 years of experience, 
-    I have honed my skills working with Python, Django, Flask, PostgreSQL, Docker, AWS, Terraform, and CircleCI. 
-    Since graduating from computer engineering school, 
-    I have worked as a freelancer on Upwork and quickly achieved 
-    Top-Rated Plus status with 100% job success in less than a year. 
-    I have had the privilege of working with clients from around the globe, 
-    including Ireland, Canada, and the United States. 
-    By consistently delivering high-quality and professional work, 
-    with excellent English communication and flexible time and timezone, 
-    I have built a strong reputation for client satisfaction, 
-    leading to long-term relationships that have lasted over a year. 
-    I am excited to bring my expertise and dedication to your projects."
+    description: "As a Backend Engineer with a degree in Computer Engineering, 
+    I have gained experience working with clients based in both Europe and the Americas. 
+    With strong professional English communication skills and a flexible attitude 
+    towards learning new technologies, I am seeking an opportunity to enhance my 
+    experience by joining a skilled team and tackling challenging problems."
     imageUrl: "https://avatars.githubusercontent.com/u/20958970?v=4"
     imageTitle: mstva_img
     imageWidth: 120
