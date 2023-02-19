@@ -62,7 +62,7 @@ menu:
 
     - name: "resume"
       weight: 4
-      url: "resume/Backend_Engineer_Mustafa_Abdallah_Mohamed.pdf"
+      url: "resume/Mustafa_Abdallah_Resume.pdf"
 
     - name: "hire_me"
       weight: 0
