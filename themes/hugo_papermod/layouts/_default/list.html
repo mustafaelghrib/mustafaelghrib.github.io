@@ -3,7 +3,7 @@
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
-{{- $pages = first 3 (where site.RegularPages "Section" "tech_writings") }}
+{{- $pages = first 0 (where site.RegularPages "Section" "tech_writings") }}
 {{- partial "index_profile.html" . }}
 {{- if $pages }}
 <hr>
