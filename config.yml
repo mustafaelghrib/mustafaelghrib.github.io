@@ -13,11 +13,14 @@ params:
     enabled: true
     title: "Mustafa Abdallah"
     subtitle: "Junior Python Backend Engineer"
-    description: "As a Backend Engineer with a degree in Computer Engineering, 
-    I have gained experience working with clients based in both Europe and the Americas. 
-    With strong professional English communication skills and a flexible attitude 
-    towards learning new technologies, I am seeking an opportunity to enhance my 
-    experience by joining a skilled team and tackling challenging problems."
+    description: "I'm a Backend Engineer with a Computer Engineering degree, 
+    experienced in collaborating remotely with international teams 
+    across Ireland, Canada, and Kenya. Also, I've helped clients in 
+    Germany, Sweden, Switzerland, and the USA with freelance projects. 
+    With strong professional English communication skills and a flexible 
+    attitude towards learning new technologies, I am seeking an opportunity 
+    to enhance my experience by joining a skilled international and professional 
+    team and tackling challenging problems."
     imageUrl: "https://avatars.githubusercontent.com/u/20958970?v=4"
     imageTitle: mstva_img
     imageWidth: 120
