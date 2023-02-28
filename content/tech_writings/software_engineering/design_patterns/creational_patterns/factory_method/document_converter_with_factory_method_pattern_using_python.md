@@ -9,7 +9,7 @@ description:
 I am implementing real-world projects using the design patterns to see how we could benefit from them when building our own software, in this article I am building a Document Converter using the Factory Method design pattern, so let's get started!
 
 ### What is the Factory Method pattern?
-Explaining the pattern is out of scope of this article, and you could take a look at the [**references**]({{< ref "document_converter_with_factory_method_pattern_using_python.md#references" >}}) to know more about this pattern, how we use it and the UML diagram for it. Please make sure you understand the pattern before moving on.
+Explaining the pattern is out of scope of this article, and you could take a look at the [references]({{< ref "document_converter_with_factory_method_pattern_using_python.md#references" >}}) to know more about this pattern, how we use it and the UML diagram for it. Please make sure you understand the pattern before moving on.
 
 ### What is the Document Converter?
 A Document Converter is a software tool that allows converting documents from one format to another. in this we will build a Document Converter that can convert between various document formats (e.g. PDF, DOCX, HTML) using the Factory Method pattern. Each converter (e.g. PdfConverter, DocxConverter, HtmlConverter) could be implemented as a separate factory that takes in the input document and returns the corresponding output format.
@@ -117,7 +117,7 @@ Converting file.pdf to docx document
 ```
 
 ### Conclusion
-So this is just a simple Document Converter that show us how to use the Factory Method design pattern in a real-world application, I hope this article was helpful for you and [**_follow me_**](https://linkedin.com/in/mustafaabdulluh) for more articles like this.
+So this is just a simple Document Converter that show us how to use the Factory Method design pattern in a real-world application, I hope this article was helpful for you and [follow me](https://linkedin.com/in/mustafaabdulluh) for more articles like this.
 
 ### References
 - [Factory Method Pattern – Design Patterns (ep 4) by Christopher Okhravi](https://www.youtube.com/watch?v=EcFVTgRHJLM)

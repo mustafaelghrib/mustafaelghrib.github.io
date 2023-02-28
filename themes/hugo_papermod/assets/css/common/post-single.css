@@ -259,3 +259,6 @@ h6:hover .anchor {
     user-select: none;
 }
 
+.post-content a {
+    color: #2091ee;
+}
