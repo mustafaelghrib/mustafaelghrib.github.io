@@ -12,29 +12,26 @@ params:
   profileMode:
     enabled: true
     title: "Mustafa Abdallah"
-    subtitle: "Backend Engineer #python #typescript #aws #docker"
-    description: "I'm a Backend Engineer with a Computer Engineering degree, 
-    experienced in collaborating remotely with international teams 
-    across Ireland, Canada, and Kenya. Also, I've helped clients in 
-    Germany, Sweden, Switzerland, and the USA with freelance projects. 
-    With strong professional English communication skills and a flexible 
-    attitude towards learning new technologies, I am seeking an opportunity 
-    to enhance my experience by joining a skilled international and professional 
-    team and tackling challenging problems."
+    subtitle: "Full Stack Software Engineer"
+    description: "Experienced Software Engineer with 2 years of expertise in 
+    software development, Cloud, and DevOps. Possesses excellent collaboration skills, 
+    having worked with international teams, and has strong professional English 
+    communication skills. Takes ownership of tasks and projects, with a flexible 
+    approach to learning and applying new technologies."
     imageUrl: "https://avatars.githubusercontent.com/u/20958970?v=4"
     imageTitle: mstva_img
     imageWidth: 120
     imageHeight: 120
 
   socialIcons:
-    - name: twitter
-      url: "https://twitter.com/MustafaAbdulluh"
-    - name: github
-      url: "https://github.com/mstva"
     - name: linkedin
       url: "https://linkedin.com/in/mustafaabdulluh"
-#    - name: upwork
-#      url: "https://www.upwork.com/freelancers/~01827d2d94f6d3cbd6"
+    - name: github
+      url: "https://github.com/mstva"
+    - name: twitter
+      url: "https://twitter.com/MustafaAbdulluh"
+    - name: upwork
+      url: "https://www.upwork.com/freelancers/~01827d2d94f6d3cbd6"
 
 permalinks:
   tech_writings: ':filename/'
