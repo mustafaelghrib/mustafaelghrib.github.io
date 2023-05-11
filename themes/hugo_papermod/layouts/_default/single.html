@@ -9,7 +9,7 @@
       <p class="post-date">{{ .Params.arabic_author }} - {{ .Params.arabic_date }}</p>
     </div>
     {{ else }}
-    <p class="post-date">{{ .Params.author }} - {{ .Date | time.Format (site.Params.DateFormat) }}</p>
+    <p class="post-date">{{ .Params.author }}</p>
     {{- end }}
     <hr>
   </header>
