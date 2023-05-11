@@ -1,0 +1,62 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Terraform and Microservices
+| Mustafa Abdallah
+| 11 May 2023</title><meta name=keywords content><meta name=description content="Terraform and Microservices - mstva"><link rel=canonical href=https://mstva.github.io/terraform_and_microservices/><link crossorigin=anonymous href=/assets/css/stylesheet.933f0e76f81de975f42d1c7da6dddb114cd2f66a03465d8335ed83d7814a4e99.css integrity="sha256-kz8Odvgd6XX0LRx9pt3bEUzS9moDRl2DNe2D14FKTpk=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://mstva.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://mstva.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://mstva.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://mstva.github.io/apple-touch-icon.png><link rel=mask-icon href=https://mstva.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://mstva.github.io/ accesskey=h title="mstva (Alt + H)">mstva</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://mstva.github.io/tech_writings/ title=tech_writings><span>tech_writings</span></a></li><li><a href=https://mstva.github.io/arabic_writings/ title=كتاباتي_بالعربية><span>كتاباتي_بالعربية</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>Terraform and Microservices</h1><p class=post-date>Mustafa Abdallah</p><hr></header><div class=post-content><h2 id=introduction>Introduction</h2><p>When I was <a href=https://www.linkedin.com/posts/mustafaabdulluh_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096-_n3h>improving my skills</a>
+and learning about Microservices, Cloud, and DevOps, I faced a problem when migrating from Monolithic
+Architecture to Microservices Architecture, specifically in the part where I had to provision the
+cloud infrastructure with Terraform. The issue was how to write the cloud infrastructure successfully
+for each service in our microservices program without duplicating code and ensuring that each service&rsquo;s
+infrastructure was standalone, without affecting other services. This was challenging because
+microservices follow the Single Responsibility Principle. Today, I am writing this article to
+share how I solved this issue for anyone who may wonder how to use Terraform with Microservices.</p><h2 id=what-is-terraform>What is Terraform?</h2><p>Terraform is an infrastructure-as-code (IaC) tool that allows us to provision cloud infrastructure
+using code instead of relying on manual configuration through the cloud console. This can be very
+convenient, especially if you have a coding background. To learn more about Terraform, you can
+visit their <a href=https://www.terraform.io>website</a>.</p><h2 id=what-is-microservices>What is Microservices?</h2><p>Microservices is a backend architecture that follows the Single Responsibility Principle.
+It involves breaking down a monolithic application into small services, each of which performs
+a specific function and communicates with each other via APIs and messaging services such as
+RabbitMQ. The benefits of microservices include the ability to use different programming languages
+to build these services and the flexibility of having different teams with different backgrounds
+and technical skills work on them. However, implementing and debugging microservices can be
+complex due to its distributed nature.</p><h2 id=terraform-and-monolith>Terraform and Monolith</h2><p>When it comes to regular backend architecture or monolithic architecture, using Terraform
+is relatively straightforward. We can write the infrastructure code for one backend API in
+a single file or use modules if we have a more complex infrastructure. Ultimately, we&rsquo;re
+dealing with just one thing, so it&rsquo;s much simpler compared to implementing microservices architecture.</p><p>For example, in my latest project, I built a <a href=https://github.com/mstva/docorvter>PDF-to-HTML document converter</a>
+using a monolithic architecture. I deployed this backend API on AWS infrastructure using
+Terraform, and I only needed to use AWS S3 and AWS RDS. As a result, my Terraform folder
+was quite simple, as shown below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>├── aws.tf
+</span></span><span style=display:flex><span>├── main.tf
+</span></span><span style=display:flex><span>└── modules
+</span></span><span style=display:flex><span>    └── aws
+</span></span><span style=display:flex><span>        ├── RDS.tf
+</span></span><span style=display:flex><span>        ├── S3.tf
+</span></span><span style=display:flex><span>        └── main.tf
+</span></span></code></pre></div><h2 id=terraform-and-microservices>Terraform and Microservices</h2><p>On the other hand, when we divide a monolithic service into many microservices,
+each service has its own infrastructure. This can make things more complicated,
+especially if we try to do it the old-fashioned way, which can lead to code
+duplication and difficulties in managing each service&rsquo;s infrastructure.</p><p>The solution to this problem was to use modules to make each service standalone. First,
+we created a module for the common cloud infrastructure and then created a separate module
+for each service that used this common module. With this approach, we were able to avoid code
+duplication and manage services more easily.</p><p>For example, in my latest project, I built a <a href=https://github.com/mstva/fuilder>form builder</a>
+using microservices architecture, and I needed to deploy the infrastructure on Google Cloud
+Platform (GCP). I had three services, each of which needed a Google Storage Bucket and a
+Google SQL Database. To accomplish this, I created modules for GCP to provision these
+common GCP services, and then created a separate module for each service under the
+services&rsquo; folder. These modules used the common GCP modules, as shown below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>├── README.md
+</span></span><span style=display:flex><span>├── main.tf
+</span></span><span style=display:flex><span>└── modules
+</span></span><span style=display:flex><span>    ├── gcp
+</span></span><span style=display:flex><span>    │   ├── sql_database
+</span></span><span style=display:flex><span>    │   │   └── main.tf
+</span></span><span style=display:flex><span>    │   └── storage_bucket
+</span></span><span style=display:flex><span>    │       └── main.tf
+</span></span><span style=display:flex><span>    └── services
+</span></span><span style=display:flex><span>        ├── form_builder_service
+</span></span><span style=display:flex><span>        │   └── main.tf
+</span></span><span style=display:flex><span>        ├── forms_service
+</span></span><span style=display:flex><span>        │   └── main.tf
+</span></span><span style=display:flex><span>        └── users_service
+</span></span><span style=display:flex><span>            └── main.tf
+</span></span></code></pre></div><h2 id=conclusion>Conclusion</h2><p>Overall, Terraform is a great tool, and when it comes to microservices, it can become more complicated.
+However, with Terraform modules, things become easier to implement. I hope this article has been
+helpful for you, and feel free to follow me for more articles like this or ask me anything related on
+my <a href=https://linkedin.com/in/mustafaabdulluh>LinkedIn</a>.</p></div></article></main><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild===n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName==="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
