@@ -18,7 +18,6 @@
         {{ if .Params.arabic_author }} | {{ .Params.arabic_author }} {{ end }}
         {{ if .Params.arabic_date }} | {{ .Params.arabic_date }} {{ end }}
         {{ if .Params.author }} | {{ .Params.author }} {{ end }}
-        {{ if and .IsPage (not .Params.arabic_date) }} | {{ .Date | time.Format (site.Params.DateFormat) }} {{ end }}
         {{ if and .IsSection (not .Params.arabic_author) }} | {{ site.Params.author }} {{ end }}
         {{ end }}
         {{ end }}
