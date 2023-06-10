@@ -17,15 +17,18 @@
 
 {{- range $pages }}
 <a aria-label="post link to {{ .Title }}" href="{{ .Permalink }}">
-    <div dir="auto" class="entry-header">
-        <p class="entry-title">{{- .Title }}</p>
-        {{- if not .RegularPages}}
-        {{- if (and .Params.arabic_date .Params.arabic_location)}}
-        <p class="entry-info">{{ .Params.arabic_date }} - {{ .Params.arabic_location }}</p>
-        {{ else }}
-        <p class="entry-info">{{ .PublishDate.Format "2 Jan 2006" }} - {{ .Params.location }}</p>
-        {{- end }}
-        {{- end }}
+    <div dir="auto" class="post-entry">
+        <div class="entry-header">
+            <p class="entry-title">{{- .Title }}</p>
+            {{- if not .RegularPages}}
+            {{- if (and .Params.arabic_date .Params.arabic_location)}}
+            <p class="entry-info">{{ .Params.arabic_date }} - {{ .Params.arabic_location }}</p>
+            {{ else }}
+            <p class="entry-info">{{ .PublishDate.Format "2 Jan 2006" }} - {{ .Params.location }}</p>
+            {{- end }}
+            {{- end }}
+        </div>
+        <p class="entry-description">{{ .Description }}</p>
     </div>
 </a>
 {{- end }}
