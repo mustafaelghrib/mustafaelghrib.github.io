@@ -3,7 +3,12 @@
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
+{{- $pages = first 0 (where site.RegularPages "Section" "tech_writings") }}
 {{- partial "index_profile.html" . }}
+{{- if $pages }}
+<hr>
+<p class="latest_writings">Recent Writings: </p>
+{{- end }}
 {{- end }}
 
 {{- if not .IsHome | and .Title }}
