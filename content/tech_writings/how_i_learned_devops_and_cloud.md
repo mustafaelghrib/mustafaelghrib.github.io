@@ -1,7 +1,9 @@
 ---
 title: "أذاي أتعلمت ال DevOps وال Cloud"
 date: 2023-05-12T19:18:02+03:00
-description: 
+arabic_date: ١٢ مايو ٢٠٢٣
+arabic_author: مصطفى عبدالله
+arabic_location: الإسكندرية، مصر
 
 ---
 ## مقدمة

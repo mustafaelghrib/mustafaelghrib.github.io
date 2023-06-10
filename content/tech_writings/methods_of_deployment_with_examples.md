@@ -2,7 +2,7 @@
 title: "Methods of Deployment with Examples"
 date: 2023-05-12T10:43:29+03:00
 author: Mustafa Abdallah
-description:
+location: Alexandria, Egypt
 ---
 
 ## Table of Contents:

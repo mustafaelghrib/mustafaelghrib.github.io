@@ -15,9 +15,12 @@
         {{ else }}
         {{ if .Title }}
         {{ .Title }}
-        {{ if .Params.arabic_author }} | {{ .Params.arabic_author }} {{ end }}
-        {{ if .Params.arabic_date }} | {{ .Params.arabic_date }} {{ end }}
-        {{ if .Params.author }} | {{ .Params.author }} {{ end }}
+        {{ if .Params.arabic_author }} - {{ .Params.arabic_author }} {{ end }}
+        {{ if .Params.arabic_date }} - {{ .Params.arabic_date }} {{ end }}
+        {{ if .Params.arabic_location }} - {{ .Params.arabic_location }} {{ end }}
+        {{ if .Params.author }} - {{ .Params.author }} {{ end }}
+        {{ if .Params.date }} - {{ .Params.date }} {{ end }}
+        {{ if .Params.location }} - {{ .Params.location }} {{ end }}
         {{ if and .IsSection (not .Params.arabic_author) }} | {{ site.Params.author }} {{ end }}
         {{ end }}
         {{ end }}

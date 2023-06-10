@@ -4,12 +4,12 @@
 
   <header class="post-header">
     <h1 class="post-title">{{ .Title }}</h1>
-    {{- if (and .Params.arabic_date .Params.arabic_author)}}
+    {{- if (and .Params.arabic_date .Params.arabic_author .Params.arabic_location)}}
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
-      <p class="post-date">{{ .Params.arabic_author }} - {{ .Params.arabic_date }}</p>
+      <p class="post-date">{{ .Params.arabic_author }} - {{ .Params.arabic_date }} - {{ .Params.arabic_location }}</p>
     </div>
     {{ else }}
-    <p class="post-date">{{ .Params.author }}</p>
+    <p class="post-date">{{ .Params.author }} - {{ .PublishDate.Format "2 January 2006" }} - {{ .Params.location }}</p>
     {{- end }}
     <hr>
   </header>

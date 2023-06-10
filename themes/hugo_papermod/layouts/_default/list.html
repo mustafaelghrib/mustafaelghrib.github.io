@@ -20,15 +20,7 @@
   <div class="post-entry">
     <div class="entry-header">
       <p class="entry-title">{{- .Title }}</p>
-      {{- if (and .Params.arabic_date .Params.arabic_author)}}
-      <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
-        <p class="post-date">{{ .Params.arabic_date }}</p>
-      </div>
-      {{ else }}
-      <p class="post-date"></p>
-      {{- end }}
     </div>
-    <p class="entry-description">{{ .Description }}</p>
   </div>
 </a>
 {{- end }}
