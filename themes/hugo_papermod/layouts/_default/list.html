@@ -3,12 +3,7 @@
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
-{{- $pages = first 0 (where site.RegularPages "Section" "tech_writings") }}
 {{- partial "index_profile.html" . }}
-{{- if $pages }}
-<hr>
-<p class="latest_writings">Recent Writings: </p>
-{{- end }}
 {{- end }}
 
 {{- if not .IsHome | and .Title }}
@@ -17,11 +12,16 @@
 
 {{- range $pages }}
 <a aria-label="post link to {{ .Title }}" href="{{ .Permalink }}">
-  <div class="post-entry">
-    <div class="entry-header">
-      <p class="entry-title">{{- .Title }}</p>
+    <div dir="auto" class="entry-header">
+        <p class="entry-title">{{- .Title }}</p>
+        {{- if not .RegularPages}}
+        {{- if (and .Params.arabic_date .Params.arabic_location)}}
+        <p class="entry-info">{{ .Params.arabic_date }} - {{ .Params.arabic_location }}</p>
+        {{ else }}
+        <p class="entry-info">{{ .PublishDate.Format "2 Jan 2006" }} - {{ .Params.location }}</p>
+        {{- end }}
+        {{- end }}
     </div>
-  </div>
 </a>
 {{- end }}
 
