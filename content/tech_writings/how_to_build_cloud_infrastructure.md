@@ -6,7 +6,7 @@ location: Alexandria, Egypt
 ---
 
 # Introduction
-With the age of cloud computing and public cloud like AWS, GCP, and Azure, building a cloud infrastructure become a regular thing that we do in software development, but doing it right with defined steps and framework is what will make you produce high-quality and efficient work. Today I am writing about those steps that make us build an efficient cloud infrastructure.
+With the age of cloud computing and public clouds like AWS, GCP, and Azure, building a cloud infrastructure has become a regular practice in software development. However, doing it correctly with defined steps is what will enable you to produce high-quality and efficient work. Today, I am writing about those steps that help us build an efficient cloud infrastructure.
 
 ## Table of Contents:
 - [Steps of Building a Cloud Infrastructure](#steps-of-building-a-cloud-infrastructure)
@@ -24,62 +24,66 @@ With the age of cloud computing and public cloud like AWS, GCP, and Azure, build
 ---
 
 # Steps of Building a Cloud Infrastructure
-These steps define what we should follow when building cloud infrastructure, and it's applicable on any cloud provider, here is a detailed overview about each one:
+These steps define what we should follow when building cloud infrastructure, and they are applicable to any cloud provider. Here is a detailed overview of each one:
 
 ## Define
-You first need to define your requirements and goals, so you could have an outline about what you want to achieve, you should study your application and decide how you want to deploy it, there are a lot of deployments methods and I wrote about some of them before [in this article](). after choosing the deployment method you will need to know the services that you will need in the cloud.
+You first need to define your requirements and goals, so that you can have an outline of what you want to achieve. You should study your application and decide how you want to deploy it. There are various deployment methods, some of which I discussed in previous sections of [this article](https://mstva.github.io/methods_of_deployment_with_examples/). After choosing the deployment method, you will need to determine the cloud services you will require.
 
-For example, if you have a Python Backend API built with Django and you chose to deploy it using Docker on a remote server, you will need to consider services like that:
-- For remote server, you will need a virtual machine on the cloud and that could be done using something like AWS EC2, Google Compute Engine or Azure Virtual Machine
-- For Docker, you will need a docker registry that you will push and pull your docker image form it, and that could be done using services like Docker Hub, AWS ECR, or Azure ACR
-- For the Django you will need a database and storage services, and that could be done using services like AWS RDS, Google SQL, or Azure Database for database, and for storage you could use services like AWS S3, Google Storage, or Azure Blob Storage
+For example, if you have a Python backend API built with Django and you have chosen to deploy it using Docker on a remote server, you will need to consider services such as:
 
-So up till now you defined your deployment method and the services you may need from the cloud, next step is to choose the cloud provider.
+- For the remote server, you will need a virtual machine on the cloud. This can be achieved using platforms like AWS EC2, Google Compute Engine, or Azure Virtual Machine.
+- For Docker, you will require a Docker registry where you can push and pull your Docker image. Services such as Docker Hub, AWS ECR, or Azure ACR can fulfill this need.
+- For Django, you will need database and storage services. Platforms like AWS RDS, Google SQL, or Azure Database can provide the necessary database services, while storage needs can be met using services like AWS S3, Google Storage, or Azure Blob Storage.
+
+So far, you have defined your deployment method and identified the cloud services you may require. The next step is to choose the cloud provider.
 
 ## Choose
-After you define your requirements and goals, you have to choose one of the public cloud providers that satisfy your requirements and your budget, even each one may follow the pay per use payment strategy, the prices of services may be expansive in one and cheaper in others, you could actually benefit from them all together in something called multi or hybrid cloud, the most important thing is to choose a cloud provider, so you could provision the services you want for your application on it. 
+After you define your requirements and goals, you have to choose one of the public cloud providers that satisfies your requirements and fits your budget. While each provider may follow the pay-per-use payment strategy, the prices of services can vary, with some being more expensive than others. You can also benefit from using multiple or hybrid clouds, leveraging the strengths of different providers. The crucial step is to select a cloud provider that allows you to provision the services you need for your application.
 
-The three public and popular cloud providers right now are AWS, GCP, and Azure, all of them provide services that are the same in the concept and different in the configration, for example if you want a remote server you could find it on AWS under AWS EC2 service, on GCP under Google Compute Engine, and on Azure under Azure Virtual Machine, all of them will give you the same remote server.
+The three current popular public cloud providers are AWS, GCP, and Azure. While the underlying concept of their services is the same, their configurations may differ. For instance, if you need a remote server, you can find it on AWS as part of the AWS EC2 service, on GCP as Google Compute Engine, and on Azure as Azure Virtual Machine. These providers offer similar functionality with slight variations.
 
-For example, for our previous Python Backend API that we talked about it in the define step above, based on the requirements we could choose AWS as it provide services for all what we want and the pay per use payment model could be good for us, so we could pay only for our use.
+For our earlier example of the Python Backend API discussed in the previous step, based on our requirements, we could choose AWS as it provides all the necessary services, and the pay-per-use payment model aligns well with our needs, allowing us to pay only for our usage.
 
-All of the above cloud providers provide free tier that you could benefit from it if you are not sure what to choose, check those cloud providers websites to know more.
+It's worth noting that all of these cloud providers offer a free tier, which you can take advantage of if you're unsure about which one to choose. Visit their respective websites for more information.
 
 ## Plan
-So after we defined the services that we want, and chose the cloud provider, we need to plan our cloud infrastructure, so we just need to choose the cloud services that match our needs from the cloud provider that we chose and select the configuration for them.
+After defining the desired services and selecting the cloud provider, the next step is to plan the cloud infrastructure. This involves choosing the specific cloud services that align with our needs from the chosen provider and configuring them accordingly.
 
-For example, for backend api, we need a remote server, docker registry, database and storage. we have chose AWS as our cloud provider so let's see what AWS services that match our requirements
+For instance, in the case of a backend API, we require a remote server, a Docker registry, a database, and storage. Since we have chosen AWS as our cloud provider, let's explore the AWS services that meet our requirements.
 
-- Remote Server: AWS provide AWS EC2 service that help us configure ubuntu server to host our code, and the configuration we could choose Ubuntu for the OS, t2.micro for the CPU, and 20G general purpose SSD for the server volume storage size and type.
-- Doker Registry: AWS provide AWS ECR service that let us push and pull docker images, and the configuration we could choose public or private repository.
-- Database: AWS provide AWS RDS service that let us provision PostgresSQl managed database, and the configuration we could choose Postgres for the database engine, db.t3.micro for the database CPU and 20G for storage of the managed database.
-- Storage: AWS provide AWS S3 service that let us store our static and media files, and the configuration we could choose how much storage and what type of access to it, between public or private.
+- Remote Server: AWS provides the AWS EC2 service, which allows us to configure an Ubuntu server to host our code. We can choose Ubuntu as the operating system, t2.micro as the CPU configuration, and allocate 20GB of general-purpose SSD for the server volume storage.
+
+- Docker Registry: AWS offers the AWS ECR service, which enables us to push and pull Docker images. We have the option to choose between a public or private repository for our Docker registry.
+
+- Database: AWS provides the AWS RDS service, allowing us to provision a managed PostgreSQL database. We can configure the database engine as PostgreSQL, choose the db.t3.micro instance type for CPU configuration, and allocate 20GB of storage for the managed database.
+
+- Storage: AWS offers the AWS S3 service, which enables us to store static and media files. We can configure the storage capacity and choose whether to have public or private access to the stored data.
 
 ## Design
-After planning, we need something visually so we could have an overview of the big picture of our cloud infrastructure, and it's the best way to make changes before implementation, what we actually need is to design our solution based on the cloud provider we chose, this will show how those services connected together and how the workflow of our cloud infrastructure will work, this step actually need more work and taking in consideration networking and security, and there a frameworks for helping in doing it effectively like [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected) that are beyond the scope of this article.
+After planning, we need a visual representation to provide an overview of our cloud infrastructure's big picture. This is crucial as it allows for changes to be made before implementation. Designing our solution based on the chosen cloud provider demonstrates how the services are interconnected and how the workflow of our cloud infrastructure will function. This step requires additional work and must take networking and security into consideration. Frameworks like [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected) can assist in effectively accomplishing this task, but they are beyond the scope of this article.
 
-For example, for our backend API, we may design and draw a diagram for our cloud infrastructure using a tool like [draw.io](https://app.diagrams.net/?splash=0&libs=aws4), as you see in the picture below, our infrastructure is very simple, the user go to the IP address of the AWS EC2 instance, the instance is actually running a docker container from our image that are pulled from AWS ECR, and our docker image that pushed and saved in the AWS ECR will access the AWS S3 and AWS RDS for our code to use them.
+For example, in the case of our backend API, we can design and create a diagram of our cloud infrastructure using a tool like [draw.io](https://app.diagrams.net/?splash=0&libs=aws4). As seen in the picture below, our infrastructure is relatively simple. Users access the IP address of the AWS EC2 instance, which runs a Docker container using an image retrieved from AWS ECR. Our Docker image, stored and pushed to AWS ECR, connects to AWS S3 and AWS RDS, allowing our code to utilize these services.
 
 {{< figure src="/images/cloud_infrastructure_diagram.png" width="100%" >}}
 
 ## Implement
-All the previous steps is just the basic blocks that we need to do before touching anything, that will help us do the things correctly, after that we need to implement our solution and provisioning this services on the cloud provider, for AWS we could use the console dashboard, the AWS CLI, or Infrastructure as code tool like AWS CloudFormation or Terraform.
+All the previous steps are just the basic blocks that we need to complete before proceeding further. These steps ensure that we approach the tasks correctly. After completing these initial steps, we can move on to implementing our solution and provisioning the necessary services on the chosen cloud provider. For AWS, we have several options such as using the console dashboard, the AWS CLI, or utilizing Infrastructure as Code tools like AWS CloudFormation or Terraform.
 
-Based on the planning step we will have the services and what configurations for them, and we could go and do them, and based on the design we could know the relationship between services and how the workflow will behave on the cloud, you may consider something like VPC and security groups for the EC2 instance, but for now let's keep things simple.
+Based on the planning stage, we have identified the required services and their configurations. Now, we can proceed with their implementation. The design we created earlier helps us understand the relationships between services and how the workflow will function in the cloud environment. For instance, you might consider aspects like Virtual Private Cloud (VPC) and security groups for the EC2 instance. However, for simplicity, let's focus on keeping things straightforward for now.
 
 ## Deploy
-So everything is setup correctly? right let's use them to deploy our code, so for our backend api, our code is containerized in docker image, we will push the image to ECR and update our code to use the AWS RDS and AWS S3 for the database and storage, and by ssh to our server we could pull the docker image and make a container from it so our backend api could run on the server, and we visit it through the IP address of the EC2 instance.
+Is everything set up correctly? Great! Now, let's utilize the configured services to deploy our code. In the case of our backend API, our code is containerized in a Docker image. We will push this image to ECR and update our code to utilize AWS RDS for the database and AWS S3 for storage. By using SSH to access our server, we can pull the Docker image and create a container to run our backend API. To access the API, we simply visit the IP address of the EC2 instance.
 
-For deployment, we could actually do that manually, or use a CI/CD tool like GitHub Actions or Jenkins to do them automatically, both ways works, and we could do them together, first do manual deployment to ensure that everything is working correctly, and then write a CI/CD pipeline to do the steps you did automatically.
+For deployment, we have the option to do it manually or leverage a CI/CD tool such as GitHub Actions or Jenkins for automated deployments. Both methods are effective, and we can even combine them. Initially, performing a manual deployment ensures that everything is functioning correctly. Then, we can proceed to write a CI/CD pipeline that automates the steps performed during manual deployment.
 
 ## Monitor
-We may need to setup monitoring tools, so you could have an overview about your code and cloud infrastructure performance in case you want to improve them and has some data to make decisions.
+We may need to set up monitoring tools so that you can gain an overview of your code and the performance of your cloud infrastructure. This will be beneficial if you aim to make improvements and require data-driven insights to make informed decisions.
 
 ## Maintain
-You will need this as this cloud provider frequently update and remove stuff from their services, so you will need to keep your cloud infrastructure working by maintaining it regularly.
+You will need to do this because cloud providers frequently update and remove features from their services. Therefore, it is important to regularly maintain your cloud infrastructure to ensure its continued functionality.
 
 # What is Next in This Series?
-I will continue and write other articles about how to build cloud infrastructure on AWS, Azure, GCP and Digital Ocean. I will use real world examples and projects and I will follow the steps above and write more detailed approach, so you could know how to build your own.
+I will continue and write other articles about how to build cloud infrastructure on AWS, Azure, GCP, and Digital Ocean. I will use real-world examples and projects, following the steps mentioned above, and providing a more detailed approach so that you can learn how to build your own infrastructure.
 
 # Conclusion
-Cloud computing has changed the game of software development, and companies goes toward adapting them in their organization, so knowing how to use them effectively will help you create efficient solutions, so going to the cloud provider directly is not enough, you should have a detailed plan and defined steps to follow to build cloud infrastructure solutions for your applications.  I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaabdulluh). 
+Cloud computing has changed the game of software development, and companies are moving towards adapting it in their organizations. Knowing how to use it effectively will help you create efficient solutions. Therefore, relying solely on the cloud provider is not enough. You should have a detailed plan and defined steps to follow when building cloud infrastructure solutions for your applications. I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaabdulluh). 
