@@ -25,7 +25,7 @@ With the age of cloud computing and public clouds like AWS, GCP, and Azure, buil
 ---
 
 # What is Cloud Infrastructure?
-It's basically the resources that your app need to run your code on the internet, these resources is provided as services on the cloud computing providers like AWS, GCP, or Azure. so to make your app work you need to build a cloud infrastructure.
+It's basically the resources that your app needs to run your code on the internet. These resources are provided as services by cloud computing providers like AWS, GCP, or Azure. So, to make your app work, you need to build a cloud infrastructure.
 
 # Steps of Building a Cloud Infrastructure
 These steps define what we should follow when building cloud infrastructure, and they are applicable to any cloud provider. Here is a detailed overview of each one:
