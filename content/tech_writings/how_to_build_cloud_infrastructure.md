@@ -1,6 +1,6 @@
 ---
-title: "How to Build Cloud Infrastructure"
-date: 2023-06-08T10:56:05+03:00
+title: "How to Build a Cloud Infrastructure"
+date: 2023-06-16T10:56:05+03:00
 author: Mustafa Abdallah
 location: Alexandria, Egypt
 ---
@@ -9,6 +9,7 @@ location: Alexandria, Egypt
 With the age of cloud computing and public clouds like AWS, GCP, and Azure, building a cloud infrastructure has become a regular practice in software development. However, doing it correctly with defined steps is what will enable you to produce high-quality and efficient work. Today, I am writing about those steps that help us build an efficient cloud infrastructure.
 
 ## Table of Contents:
+- [What is Cloud Infrastructure?](#what-is-cloud-infrastructure)
 - [Steps of Building a Cloud Infrastructure](#steps-of-building-a-cloud-infrastructure)
     - [Define](#define)
     - [Choose](#choose)
@@ -23,6 +24,9 @@ With the age of cloud computing and public clouds like AWS, GCP, and Azure, buil
 
 ---
 
+# What is Cloud Infrastructure?
+It's basically the resources that your app need to run your code on the internet, these resources is provided as services on the cloud computing providers like AWS, GCP, or Azure. so to make your app work you need to build a cloud infrastructure.
+
 # Steps of Building a Cloud Infrastructure
 These steps define what we should follow when building cloud infrastructure, and they are applicable to any cloud provider. Here is a detailed overview of each one:
 
@@ -31,9 +35,9 @@ You first need to define your requirements and goals, so that you can have an ou
 
 For example, if you have a Python backend API built with Django and you have chosen to deploy it using Docker on a remote server, you will need to consider services such as:
 
-- For the remote server, you will need a virtual machine on the cloud. This can be achieved using platforms like AWS EC2, Google Compute Engine, or Azure Virtual Machine.
+- For the remote server, you will need a virtual machine on the cloud. This can be achieved using services like AWS EC2, Google Compute Engine, or Azure Virtual Machine.
 - For Docker, you will require a Docker registry where you can push and pull your Docker image. Services such as Docker Hub, AWS ECR, or Azure ACR can fulfill this need.
-- For Django, you will need database and storage services. Platforms like AWS RDS, Google SQL, or Azure Database can provide the necessary database services, while storage needs can be met using services like AWS S3, Google Storage, or Azure Blob Storage.
+- For Django, you will need database and storage services. Services like AWS RDS, Google SQL, or Azure Database can provide the necessary database services, while storage needs can be met using services like AWS S3, Google Storage, or Azure Blob Storage.
 
 So far, you have defined your deployment method and identified the cloud services you may require. The next step is to choose the cloud provider.
 
