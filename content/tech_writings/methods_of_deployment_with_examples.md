@@ -5,23 +5,26 @@ author: Mustafa El-Ghrib
 location: Alexandria, Egypt
 ---
 
-## Table of Contents:
-- [Introduction]({{< ref "#introduction" >}})
-- [Deploy using Nginx]({{< ref "#deploy-using-nginx" >}})
-    - [What is Nginx?]({{< ref "#what-is-nginx" >}})
-    - [Deploying Manually]({{< ref "#deploying-manually" >}})
-    - [Deploying Automatically With Linux Bash Script]({{< ref "#deploying-automatically-with-linux-bash-script" >}})
-- [Deploy using Docker]({{< ref "#deploy-using-docker" >}})
-    - [What is Docker?]({{< ref "#what-is-docker" >}})
-    - [How to deploy Docker Image?]({{< ref "#how-to-deploy-docker-image" >}})
-- [Deploy using Kubernetes]({{< ref "#deploy-using-kubernetes" >}})
-    - [What is Kubernetes?]({{< ref "#what-is-kubernetes" >}})
-    - [How to deploy to Kubernetes?]({{< ref "#how-to-deploy-to-kubernetes" >}})
-- [Conclusion]({{< ref "#conclusion" >}})
----
-
 ## Introduction
 Deployment is an important step in the software development lifecycle, as it involves shipping our code to the outside world. Making the process smooth, seamless, and error-free is crucial for tech people. During my journey as a Software Engineer, I've worked on various deployment methods - from the basic to the most modern and advanced ones. Today, I am writing about these different ways of deployment and how to implement them.
+
+{{< figure src="/images/methods_of_deployment_with_examples.png" width="100%" >}}
+
+## Contents
+- [Introduction](#introduction)
+- [Deploy using Nginx](#deploy-using-nginx)
+    - [What is Nginx?](#what-is-nginx)
+    - [Deploying Manually](#deploying-manually)
+    - [Deploying Automatically With Linux Bash Script](#deploying-automatically-with-linux-bash-script)
+- [Deploy using Docker](#deploy-using-docker)
+    - [What is Docker?](#what-is-docker)
+    - [How to deploy Docker Image?](#how-to-deploy-docker-image)
+- [Deploy using Kubernetes](#deploy-using-kubernetes)
+    - [What is Kubernetes?](#what-is-kubernetes)
+    - [How to deploy to Kubernetes?](#how-to-deploy-to-kubernetes)
+- [Conclusion](#conclusion)
+
+---
 
 ## Deploy using Nginx
 
