@@ -1,10 +1,10 @@
-baseURL: 'https://mstva.github.io/'
+baseURL: 'https://elghrib.github.io/'
 languageCode: 'en-us'
 title: 'mstva'
 theme: 'hugo_papermod'
 
 params:
-  author: "Mustafa Abdallah"
+  author: "Mustafa Abdallah El-Ghrib"
   hideFooter: true
   ShowCodeCopyButtons: true
   DateFormat: "02 Jan 2006"
@@ -25,11 +25,11 @@ params:
 
   socialIcons:
     - name: linkedin
-      url: "https://linkedin.com/in/mustafaabdulluh"
+      url: "https://linkedin.com/in/elghrib"
     - name: github
-      url: "https://github.com/mstva"
+      url: "https://github.com/elghrib"
     - name: twitter
-      url: "https://twitter.com/MustafaAbdulluh"
+      url: "https://twitter.com/elghrib_"
     - name: upwork
       url: "https://www.upwork.com/freelancers/~01827d2d94f6d3cbd6"
 
