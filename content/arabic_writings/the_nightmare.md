@@ -2,7 +2,7 @@
 title: "الكابوس!"
 date: 2018-11-09T19:11:56+02:00
 arabic_date: ٩ نوفمبر ٢٠١٨
-arabic_author: مصطفى عبدالله الغريب
+arabic_author: مصطفى الغريب
 arabic_location: المنيا، مصر
 description: متي تأتي لحظة الموت، كي استيقظ مفزوعاً!
 ---

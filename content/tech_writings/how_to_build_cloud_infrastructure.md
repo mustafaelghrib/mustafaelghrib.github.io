@@ -1,12 +1,14 @@
 ---
 title: "How to Build a Cloud Infrastructure"
 date: 2023-06-16T10:56:05+03:00
-author: Mustafa Abdallah El-Ghrib
+author: Mustafa El-Ghrib
 location: Alexandria, Egypt
 ---
 
 # Introduction
 With the age of cloud computing and public clouds like AWS, GCP, and Azure, building a cloud infrastructure has become a regular practice in software development. However, doing it correctly with defined steps is what will enable you to produce high-quality and efficient work. Today, I am writing about those steps that help us build an efficient cloud infrastructure.
+
+{{< figure src="/images/how_to_build_cloud_infrastructure.png" width="100%" >}}
 
 # Table of Contents
 - [What is Cloud Infrastructure?](#what-is-cloud-infrastructure)

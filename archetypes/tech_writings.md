@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "_" " " | title }}"
 date: {{ .Date }}
-author: Mustafa Abdallah El-Ghrib
+author: Mustafa El-Ghrib
 location: Alexandria, Egypt
 ---
 

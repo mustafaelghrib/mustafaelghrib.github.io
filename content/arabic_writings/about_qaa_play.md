@@ -1,8 +1,8 @@
 ---
 title: "عن مسرحية قاع"
 date: 2021-06-25T22:37:06+02:00
-arabic_date: ٢٥ يونيو ٢٠٢١
-arabic_author: مصطفى عبدالله الغريب
+arabic_date: ٢٥ يونيه ٢٠٢١
+arabic_author: مصطفى الغريب
 arabic_location: الإسكندرية، مصر
 description: كالعادة تصل متأخراً، لكن لحسن الحظ المسرحية لم تبدأ بعد ..
 

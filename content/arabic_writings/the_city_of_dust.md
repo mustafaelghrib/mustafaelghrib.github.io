@@ -2,7 +2,7 @@
 title: "مدينة الضباب!"
 date: 2019-05-22T19:12:46+02:00
 arabic_date: ٢٢ مايو ٢٠١٩
-arabic_author: مصطفى عبدالله الغريب
+arabic_author: مصطفى الغريب
 arabic_location: المنيا، مصر
 description: إنها مدينة كئيبة رغم كل شئ، مدينة الضباب!
 ---
