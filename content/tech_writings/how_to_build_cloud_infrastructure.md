@@ -8,7 +8,7 @@ location: Alexandria, Egypt
 # Introduction
 With the age of cloud computing and public clouds like AWS, GCP, and Azure, building a cloud infrastructure has become a regular practice in software development. However, doing it correctly with defined steps is what will enable you to produce high-quality and efficient work. Today, I am writing about those steps that help us build an efficient cloud infrastructure.
 
-## Table of Contents:
+# Table of Contents
 - [What is Cloud Infrastructure?](#what-is-cloud-infrastructure)
 - [Steps of Building a Cloud Infrastructure](#steps-of-building-a-cloud-infrastructure)
     - [Define](#define)
