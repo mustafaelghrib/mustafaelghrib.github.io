@@ -9,7 +9,7 @@ cloud infrastructure with Terraform. The issue was how to write the cloud infras
 for each service in our microservices program without duplicating code and ensuring that each service&rsquo;s
 infrastructure was standalone, without affecting other services. This was challenging because
 microservices follow the Single Responsibility Principle. Today, I am writing this article to
-share how I solved this issue for anyone who may wonder how to use Terraform with Microservices.</p><h2 id=what-is-terraform>What is Terraform?</h2><p>Terraform is an infrastructure-as-code (IaC) tool that allows us to provision cloud infrastructure
+share how I solved this issue for anyone who may wonder how to use Terraform with Microservices.</p><figure><img src=/images/terraform_and_microservices.png width=100%></figure><h2 id=what-is-terraform>What is Terraform?</h2><p>Terraform is an infrastructure-as-code (IaC) tool that allows us to provision cloud infrastructure
 using code instead of relying on manual configuration through the cloud console. This can be very
 convenient, especially if you have a coding background. To learn more about Terraform, you can
 visit their <a href=https://www.terraform.io>website</a>.</p><h2 id=what-is-microservices>What is Microservices?</h2><p>Microservices is a backend architecture that follows the Single Responsibility Principle.
