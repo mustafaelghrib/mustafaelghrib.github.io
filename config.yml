@@ -30,6 +30,10 @@ params:
       url: "https://github.com/elghrib"
     - name: twitter
       url: "https://twitter.com/elghrib_"
+    - name: dev
+      url: "https://dev.to/elghrib"
+    - name: medium
+      url: "https://medium.com/@elghrib"
     - name: upwork
       url: "https://www.upwork.com/freelancers/~01827d2d94f6d3cbd6"
 
