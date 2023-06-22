@@ -1,6 +1,6 @@
 baseURL: 'https://elghrib.github.io/'
 languageCode: 'en-us'
-title: 'mstva'
+title: 'elghrib'
 theme: 'hugo_papermod'
 
 params:
