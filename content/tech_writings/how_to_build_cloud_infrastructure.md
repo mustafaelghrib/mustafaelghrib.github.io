@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Cloud Infrastructure"
 date: 2023-06-16T10:56:05+03:00
-author: Mustafa Abdallah
+author: Mustafa Abdallah El-Ghrib
 location: Alexandria, Egypt
 ---
 

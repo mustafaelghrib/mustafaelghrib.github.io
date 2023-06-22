@@ -1,7 +1,7 @@
 ---
 title: "Logging System with Singleton Pattern using Python"
 date: 2023-02-27T00:51:01+02:00
-author: Mustafa Abdallah
+author: Mustafa Abdallah El-Ghrib
 location: Minya, Egypt
 ---
 

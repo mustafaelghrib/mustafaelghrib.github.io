@@ -1,7 +1,7 @@
 ---
 title: "Terraform and Microservices"
 date: 2023-05-11T10:41:47+03:00
-author: Mustafa Abdallah
+author: Mustafa Abdallah El-Ghrib
 location: Alexandria, Egypt
 ---
 
