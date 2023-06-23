@@ -1,7 +1,7 @@
 ---
 title: "Document Converter with Factory Method Pattern using Python"
 date: 2023-02-28T17:12:04+02:00
-author: Mustafa El-Ghrib
+author: Mustafa Elghrib
 location: Minya, Egypt
 ---
 

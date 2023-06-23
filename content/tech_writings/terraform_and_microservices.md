@@ -1,7 +1,7 @@
 ---
 title: "Terraform and Microservices"
 date: 2023-05-11T10:41:47+03:00
-author: Mustafa El-Ghrib
+author: Mustafa Elghrib
 location: Alexandria, Egypt
 ---
 
