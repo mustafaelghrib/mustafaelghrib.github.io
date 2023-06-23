@@ -15,7 +15,7 @@ infrastructure was standalone, without affecting other services. This was challe
 microservices follow the Single Responsibility Principle. Today, I am writing this article to 
 share how I solved this issue for anyone who may wonder how to use Terraform with Microservices.
 
-{{< figure src="/images/terraform_and_microservices.png" width="100%" >}}
+{{< figure src="/posts/terraform_and_microservices.png" width="100%" >}}
 
 ## What is Terraform?
 Terraform is an infrastructure-as-code (IaC) tool that allows us to provision cloud infrastructure 
@@ -93,4 +93,4 @@ services' folder. These modules used the common GCP modules, as shown below:
 Overall, Terraform is a great tool, and when it comes to microservices, it can become more complicated. 
 However, with Terraform modules, things become easier to implement. I hope this article has been 
 helpful for you, and feel free to follow me for more articles like this or ask me anything related on 
-my [LinkedIn](https://linkedin.com/in/mustafaabdulluh).
+my [LinkedIn](https://linkedin.com/in/mustafaelghrib).

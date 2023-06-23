@@ -8,6 +8,8 @@ location: Minya, Egypt
 ### Introduction
 In this article we will build a cache manager that stores frequently used data in memory using the Singleton pattern where the Singleton instance can ensure that the data is accessed efficiently and that memory usage is optimized.
 
+{{< figure src="/posts/cache_manager.png" width="100%" >}}
+
 ### UML Diagram of the Cache Manager
 ![UML Diagram of the Cache Manager](/images/cache_manager_uml.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "How to Build a Cloud Infrastructure"
+title: "How to Build a Cloud Infrastructure?"
 date: 2023-06-16T10:56:05+03:00
 author: Mustafa Elghrib
 location: Alexandria, Egypt
@@ -8,7 +8,7 @@ location: Alexandria, Egypt
 # Introduction
 With the age of cloud computing and public clouds like AWS, GCP, and Azure, building a cloud infrastructure has become a regular practice in software development. However, doing it correctly with defined steps is what will enable you to produce high-quality and efficient work. Today, I am writing about those steps that help us build an efficient cloud infrastructure.
 
-{{< figure src="/images/how_to_build_cloud_infrastructure.png" width="100%" >}}
+{{< figure src="/posts/cloud_infrastructure.png" width="100%" >}}
 
 # Table of Contents
 - [What is Cloud Infrastructure?](#what-is-cloud-infrastructure)
@@ -33,7 +33,7 @@ It's basically the resources that your app needs to run your code on the interne
 These steps define what we should follow when building cloud infrastructure, and they are applicable to any cloud provider. Here is a detailed overview of each one:
 
 ## Define
-You first need to define your requirements and goals, so that you can have an outline of what you want to achieve. You should study your application and decide how you want to deploy it. There are various deployment methods, some of which I discussed in previous sections of [this article](https://mstva.github.io/methods_of_deployment_with_examples/). After choosing the deployment method, you will need to determine the cloud services you will require.
+You first need to define your requirements and goals, so that you can have an outline of what you want to achieve. You should study your application and decide how you want to deploy it. There are various deployment methods, some of which I discussed in previous sections of [this article](https://mustafaelghrib.github.io/methods_of_deployment_with_examples/). After choosing the deployment method, you will need to determine the cloud services you will require.
 
 For example, if you have a Python backend API built with Django and you have chosen to deploy it using Docker on a remote server, you will need to consider services such as:
 
@@ -92,4 +92,4 @@ You will need to do this because cloud providers frequently update and remove fe
 I will continue and write other articles about how to build cloud infrastructure on AWS, Azure, GCP, and Digital Ocean. I will use real-world examples and projects, following the steps mentioned above, and providing a more detailed approach so that you can learn how to build your own infrastructure.
 
 # Conclusion
-Cloud computing has changed the game of software development, and companies are moving towards adapting it in their organizations. Knowing how to use it effectively will help you create efficient solutions. Therefore, relying solely on the cloud provider is not enough. You should have a detailed plan and defined steps to follow when building cloud infrastructure solutions for your applications. I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaabdulluh). 
+Cloud computing has changed the game of software development, and companies are moving towards adapting it in their organizations. Knowing how to use it effectively will help you create efficient solutions. Therefore, relying solely on the cloud provider is not enough. You should have a detailed plan and defined steps to follow when building cloud infrastructure solutions for your applications. I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaelghrib). 

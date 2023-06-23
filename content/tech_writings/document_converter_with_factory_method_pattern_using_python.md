@@ -8,6 +8,8 @@ location: Minya, Egypt
 ### Introduction
 I am implementing real-world projects using the design patterns to see how we could benefit from them when building our own software, in this article I am building a Document Converter using the Factory Method design pattern, so let's get started!
 
+{{< figure src="/posts/document_converter.png" width="100%" >}}
+
 ### What is the Factory Method pattern?
 Explaining the pattern is out of scope of this article, and you could take a look at the [references]({{< ref "document_converter_with_factory_method_pattern_using_python.md#references" >}}) to know more about this pattern, how we use it and the UML diagram for it. Please make sure you understand the pattern before moving on.
 
@@ -117,7 +119,7 @@ Converting file.pdf to docx document
 ```
 
 ### Conclusion
-So this is just a simple Document Converter that show us how to use the Factory Method design pattern in a real-world application, I hope this article was helpful for you and [follow me](https://linkedin.com/in/mustafaabdulluh) for more articles like this.
+So this is just a simple Document Converter that show us how to use the Factory Method design pattern in a real-world application, I hope this article was helpful for you and [follow me](https://linkedin.com/in/mustafaelghrib) for more articles like this.
 
 ### References
 - [Factory Method Pattern – Design Patterns (ep 4) by Christopher Okhravi](https://www.youtube.com/watch?v=EcFVTgRHJLM)

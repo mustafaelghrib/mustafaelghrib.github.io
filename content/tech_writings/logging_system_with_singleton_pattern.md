@@ -8,6 +8,8 @@ location: Minya, Egypt
 ### Introduction
 Logging is an important aspect of software development, as it allows developers to track what their applications are doing and to identify and fix issues as they arise. One design pattern that can be useful in implementing a logging system is the Singleton pattern, which ensures that there is only one instance of a class in the system.
 
+{{< figure src="/posts/logging_system.png" width="100%" >}}
+
 ### UML Diagram of the Logging System
 ![UML Diagram of the Logging System](/images/logger_uml.png)
 

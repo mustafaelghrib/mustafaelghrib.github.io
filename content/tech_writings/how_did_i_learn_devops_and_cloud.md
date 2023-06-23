@@ -1,5 +1,5 @@
 ---
-title: "إزاي أتعلمت ال DevOps وال Cloud"
+title: "إزاي اتعلمت ال DevOps وال Cloud؟"
 date: 2023-05-12T19:18:02+03:00
 arabic_date: ١٢ مايو ٢٠٢٣
 arabic_author: مصطفى الغريب
@@ -9,7 +9,7 @@ arabic_location: الإسكندرية، مصر
 ## مقدمة
 في المقال ده حبيت أتكلم عن أزاي أتعلمت ال DevOps وال Cloud وال Microservices مع نفسي ك self-study و أزاي أنت كمان تقدر تتعلمها؟ خصوصا إنها خدت مني وقت عشان أتعلمها لوحدي وإيه المصادر اللي ساعدتني وإيه المشاريع اللي عملتها خلال الرحلة دي.
 
-{{< figure src="/images/how_did_i_learn_devops_and_cloud.png" width="100%" >}}
+{{< figure src="/posts/how_did_i_learn_devops_and_cloud.png" width="100%" >}}
 
 ## ليه أتعلمتهم؟
 أول حاجة محتاجين نعرفها ليه أنا احتجت أتعلم الحجات دي أو إيه الدافع اللي خلاني أتعلمهم؟
@@ -35,10 +35,10 @@ arabic_location: الإسكندرية، مصر
 
 ## إيه المصادر اللي أتعلمت منها؟
 
-أنا [كتبت بوست على لينكدان](https://www.linkedin.com/posts/mustafaabdulluh_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096-_n3h/) فيه كل الكورسات اللي أخداتها والمشاريع اللي عملتها، بالإضافة لل Documentation بتاع كل الادوات دي، وكنت ببحث وأشوف فيديوهات على اليوتيوب للحجات اللي مكنتش فاهمها منها قنوات ذي [FreeCodeCamp](https://www.youtube.com/c/Freecodecamp) و [TechWorld with Nana](https://www.youtube.com/c/techworldwithnana) وقناة [باشمهندس محمد رضوان](https://www.youtube.com/channel/UC-G5jjBDFow_FRXql0t1JMQ) ومع ظهور ال ChatGPT بقى بيساعدني في حتة ال 
+أنا [كتبت بوست على لينكدان](https://www.linkedin.com/posts/mustafaelghrib_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096-_n3h/) فيه كل الكورسات اللي أخداتها والمشاريع اللي عملتها، بالإضافة لل Documentation بتاع كل الادوات دي، وكنت ببحث وأشوف فيديوهات على اليوتيوب للحجات اللي مكنتش فاهمها منها قنوات ذي [FreeCodeCamp](https://www.youtube.com/c/Freecodecamp) و [TechWorld with Nana](https://www.youtube.com/c/techworldwithnana) وقناة [باشمهندس محمد رضوان](https://www.youtube.com/channel/UC-G5jjBDFow_FRXql0t1JMQ) ومع ظهور ال ChatGPT بقى بيساعدني في حتة ال 
 planning.
 
 ## الملخص
-التعلم في مجالنا هيفضل مستمر مع تطور التكنولوجيا كل يوم، والأهم إننا نتعلم صح وال T-shape طريقة فعالة ومناسبة جداً لينا خصوصاً مع كل الحجات دي اللي مفروض نعرفها. أتمنى يكون المقال مفيد وتابعني لمقالات ذي كده أو لو عاوز تسألني على أي شئ متعلق بالموضوع أبعتلي على [لينكدان](https://linkedin.com/in/mustafaabdulluh).
+التعلم في مجالنا هيفضل مستمر مع تطور التكنولوجيا كل يوم، والأهم إننا نتعلم صح وال T-shape طريقة فعالة ومناسبة جداً لينا خصوصاً مع كل الحجات دي اللي مفروض نعرفها. أتمنى يكون المقال مفيد وتابعني لمقالات ذي كده أو لو عاوز تسألني على أي شئ متعلق بالموضوع أبعتلي على [لينكدان](https://linkedin.com/in/mustafaelghrib).
 
 
