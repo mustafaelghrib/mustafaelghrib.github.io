@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "_" " " | title }}"
 date: {{ .Date }}
-author: Moustafa Elghrib
+author: Mustafa Elghrib
 location: Alexandria, Egypt
 ---
 

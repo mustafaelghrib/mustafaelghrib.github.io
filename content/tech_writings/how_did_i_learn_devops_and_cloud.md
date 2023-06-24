@@ -35,10 +35,10 @@ arabic_location: الإسكندرية، مصر
 
 ## إيه المصادر اللي أتعلمت منها؟
 
-أنا [كتبت بوست على لينكدان](https://www.linkedin.com/posts/moustafaelghrib_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096-_n3h/) فيه كل الكورسات اللي أخداتها والمشاريع اللي عملتها، بالإضافة لل Documentation بتاع كل الادوات دي، وكنت ببحث وأشوف فيديوهات على اليوتيوب للحجات اللي مكنتش فاهمها منها قنوات ذي [FreeCodeCamp](https://www.youtube.com/c/Freecodecamp) و [TechWorld with Nana](https://www.youtube.com/c/techworldwithnana) وقناة [باشمهندس محمد رضوان](https://www.youtube.com/channel/UC-G5jjBDFow_FRXql0t1JMQ) ومع ظهور ال ChatGPT بقى بيساعدني في حتة ال 
+أنا [كتبت بوست على لينكدان](https://www.linkedin.com/posts/mustafaelghrib_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096-_n3h/) فيه كل الكورسات اللي أخداتها والمشاريع اللي عملتها، بالإضافة لل Documentation بتاع كل الادوات دي، وكنت ببحث وأشوف فيديوهات على اليوتيوب للحجات اللي مكنتش فاهمها منها قنوات ذي [FreeCodeCamp](https://www.youtube.com/c/Freecodecamp) و [TechWorld with Nana](https://www.youtube.com/c/techworldwithnana) وقناة [باشمهندس محمد رضوان](https://www.youtube.com/channel/UC-G5jjBDFow_FRXql0t1JMQ) ومع ظهور ال ChatGPT بقى بيساعدني في حتة ال 
 planning.
 
 ## الملخص
-التعلم في مجالنا هيفضل مستمر مع تطور التكنولوجيا كل يوم، والأهم إننا نتعلم صح وال T-shape طريقة فعالة ومناسبة جداً لينا خصوصاً مع كل الحجات دي اللي مفروض نعرفها. أتمنى يكون المقال مفيد وتابعني لمقالات ذي كده أو لو عاوز تسألني على أي شئ متعلق بالموضوع أبعتلي على [لينكدان](https://linkedin.com/in/moustafaelghrib).
+التعلم في مجالنا هيفضل مستمر مع تطور التكنولوجيا كل يوم، والأهم إننا نتعلم صح وال T-shape طريقة فعالة ومناسبة جداً لينا خصوصاً مع كل الحجات دي اللي مفروض نعرفها. أتمنى يكون المقال مفيد وتابعني لمقالات ذي كده أو لو عاوز تسألني على أي شئ متعلق بالموضوع أبعتلي على [لينكدان](https://linkedin.com/in/mustafaelghrib).
 
 

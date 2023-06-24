@@ -1,7 +1,7 @@
 ---
 title: "Terraform and Microservices"
 date: 2023-05-11T10:41:47+03:00
-author: Moustafa Elghrib
+author: Mustafa Elghrib
 location: Alexandria, Egypt
 ---
 
@@ -93,4 +93,4 @@ services' folder. These modules used the common GCP modules, as shown below:
 Overall, Terraform is a great tool, and when it comes to microservices, it can become more complicated. 
 However, with Terraform modules, things become easier to implement. I hope this article has been 
 helpful for you, and feel free to follow me for more articles like this or ask me anything related on 
-my [LinkedIn](https://linkedin.com/in/moustafaelghrib).
+my [LinkedIn](https://linkedin.com/in/mustafaelghrib).

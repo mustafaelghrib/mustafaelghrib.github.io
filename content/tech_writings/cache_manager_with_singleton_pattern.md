@@ -1,7 +1,7 @@
 ---
 title: "Cache Manager with Singleton Pattern using Python"
 date: 2023-02-27T17:29:58+02:00
-author: Moustafa Elghrib
+author: Mustafa Elghrib
 location: Minya, Egypt
 ---
 

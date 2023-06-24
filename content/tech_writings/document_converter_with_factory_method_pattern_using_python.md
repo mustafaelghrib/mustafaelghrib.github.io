@@ -1,7 +1,7 @@
 ---
 title: "Document Converter with Factory Method Pattern using Python"
 date: 2023-02-28T17:12:04+02:00
-author: Moustafa Elghrib
+author: Mustafa Elghrib
 location: Minya, Egypt
 ---
 
@@ -119,7 +119,7 @@ Converting file.pdf to docx document
 ```
 
 ### Conclusion
-So this is just a simple Document Converter that show us how to use the Factory Method design pattern in a real-world application, I hope this article was helpful for you and [follow me](https://linkedin.com/in/moustafaelghrib) for more articles like this.
+So this is just a simple Document Converter that show us how to use the Factory Method design pattern in a real-world application, I hope this article was helpful for you and [follow me](https://linkedin.com/in/mustafaelghrib) for more articles like this.
 
 ### References
 - [Factory Method Pattern – Design Patterns (ep 4) by Christopher Okhravi](https://www.youtube.com/watch?v=EcFVTgRHJLM)
