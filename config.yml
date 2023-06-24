@@ -1,17 +1,17 @@
-baseURL: 'https://mustafaelghrib.github.io/'
+baseURL: 'https://moustafaelghrib.github.io/'
 languageCode: 'en-us'
-title: 'mustafaelghrib'
+title: 'moustafaelghrib'
 theme: 'hugo_papermod'
 
 params:
-  author: "Mustafa Elghrib"
+  author: "Moustafa Elghrib"
   hideFooter: true
   ShowCodeCopyButtons: true
   DateFormat: "02 Jan 2006"
 
   profileMode:
     enabled: true
-    title: "Mustafa Elghrib"
+    title: "Moustafa Elghrib"
     subtitle: "Software Engineer at Medicore Medical Services"
     description: "Experienced Software Engineer with 2+ years of expertise in 
     Software Development, Cloud, and DevOps. Possesses excellent collaboration skills, 
@@ -25,19 +25,19 @@ params:
 
   socialIcons:
     - name: linkedin
-      url: "https://linkedin.com/in/mustafaelghrib"
+      url: "https://linkedin.com/in/moustafaelghrib"
     - name: github
-      url: "https://github.com/mustafaelghrib"
+      url: "https://github.com/moustafaelghrib"
     - name: twitter
-      url: "https://twitter.com/mustafaelghrib"
+      url: "https://twitter.com/moustafaelghrib"
     - name: facebook
-      url: "https://facebook.com/mustafaelghrib"
+      url: "https://facebook.com/moustafaelghrib"
     - name: instagram
-      url: "https://instagram.com/mustafaelghrib"
+      url: "https://instagram.com/moustafaelghrib"
     - name: dev
-      url: "https://dev.to/mustafaelghrib"
+      url: "https://dev.to/moustafaelghrib"
     - name: medium
-      url: "https://medium.com/@mustafaelghrib"
+      url: "https://medium.com/@moustafaelghrib"
 
 permalinks:
   tech_writings: ':filename/'

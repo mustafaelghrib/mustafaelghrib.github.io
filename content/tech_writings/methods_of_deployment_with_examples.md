@@ -1,7 +1,7 @@
 ---
 title: "Methods of Deployment with Examples"
 date: 2023-05-12T10:43:29+03:00
-author: Mustafa Elghrib
+author: Moustafa Elghrib
 location: Alexandria, Egypt
 ---
 
@@ -39,7 +39,7 @@ For instance, I recently worked on a project that involved building a backend AP
 ### Deploying Automatically With Linux Bash Script
 All of the above is great, but when entering the world of automation, we want everything to be automated! That's exactly what I did when I built a new project. Instead of following a step-by-step guide every time, I wrote a Linux Bash script to automate these steps for me!
 
-[My project](https://github.com/mustafaelghrib/scraple) was a backend API built with Django and PostgresSQL, and I needed to deploy it with Nginx on Google Cloud Compute Engine. I set up an instance using Terraform [as shown here](https://github.com/mustafaelghrib/scraple/blob/main/infrastructure/main.tf), and then wrote a Linux Bash script that automates all the necessary steps, [as shown here](https://github.com/mustafaelghrib/scraple/tree/main/infrastructure/scripts). I attached the script to the instance so that when it launches, it runs the script and sets everything up for me automatically.
+[My project](https://github.com/moustafaelghrib/scraple) was a backend API built with Django and PostgresSQL, and I needed to deploy it with Nginx on Google Cloud Compute Engine. I set up an instance using Terraform [as shown here](https://github.com/moustafaelghrib/scraple/blob/main/infrastructure/main.tf), and then wrote a Linux Bash script that automates all the necessary steps, [as shown here](https://github.com/moustafaelghrib/scraple/tree/main/infrastructure/scripts). I attached the script to the instance so that when it launches, it runs the script and sets everything up for me automatically.
 
 ## Deploy using Docker
 
@@ -49,9 +49,9 @@ Docker is a containerization technology that allows us to package our code and r
 ### How to deploy Docker Image?
 There are many ways to deploy Docker images, but in this section, I will talk about deploying a Docker image to a virtual machine. As mentioned above, we could launch an Ubuntu server or virtual machine on any public cloud provider like AWS, GCP, or Azure. What we care about is that we need to install Docker on this Ubuntu server, then we push our Docker image to the Docker registry. After that, we pull the Docker image on our server and run some scripts to create a container from it, which makes our code accessible via port 80. Then, we can access the IP address of the server and see our code served.
 
-For example, when I was developing the [CrewTech](https://github.com/mustafaelghrib/crewtech) project, I needed to deploy it on AWS EC2 using Docker. First, I built and packaged a Docker image from the code and then pushed it to AWS ECR. After that, I set up AWS EC2 to install Docker once it launched using Terraform. Finally, I just ran a script that pulled this Docker image and created a container from it that was accessible via port 80. This made our backend API or Docker image accessible via the AWS EC2 IP address.
+For example, when I was developing the [CrewTech](https://github.com/moustafaelghrib/crewtech) project, I needed to deploy it on AWS EC2 using Docker. First, I built and packaged a Docker image from the code and then pushed it to AWS ECR. After that, I set up AWS EC2 to install Docker once it launched using Terraform. Finally, I just ran a script that pulled this Docker image and created a container from it that was accessible via port 80. This made our backend API or Docker image accessible via the AWS EC2 IP address.
 
-This process could be done manually, [as I did here](https://github.com/mustafaelghrib/crewtech#deploy-manually), or by writing a CI/CD pipeline that does all of these steps automatically every time we push new code, [as I did here](https://github.com/mustafaelghrib/crewtech/blob/main/.circleci/config.yml) with CircleCI.
+This process could be done manually, [as I did here](https://github.com/moustafaelghrib/crewtech#deploy-manually), or by writing a CI/CD pipeline that does all of these steps automatically every time we push new code, [as I did here](https://github.com/moustafaelghrib/crewtech/blob/main/.circleci/config.yml) with CircleCI.
 
 ## Deploy using Kubernetes
 
@@ -61,11 +61,11 @@ Kubernetes is an orchestration tool that manages multiple containers, and it is 
 ### How to deploy to Kubernetes?
 Kubernetes requires that the Docker image be pushed to any Docker registry, and it takes care of all the other parts. While this may seem simple, the Kubernetes system is more complex. Kubernetes is availabe on my cloud providers as a manged service like AWS EKS, Azure AKS, and GCP GKE. All of them gives you the same Kubernetes instance.
 
-For example, when I built [Docorvter](https://github.com/mustafaelghrib/docorvter), which is a PDF-to-HTML document converter, I needed to deploy it on AWS using Kubernetes. After building and pushing the Docker image of the backend, I wrote [deployment and service files](https://github.com/mustafaelghrib/docorvter/tree/main/kubernetes) that pulled this image. Then, Kubernetes took care of the rest and gave me an accessible IP address that I could visit to see my backend API.
+For example, when I built [Docorvter](https://github.com/moustafaelghrib/docorvter), which is a PDF-to-HTML document converter, I needed to deploy it on AWS using Kubernetes. After building and pushing the Docker image of the backend, I wrote [deployment and service files](https://github.com/moustafaelghrib/docorvter/tree/main/kubernetes) that pulled this image. Then, Kubernetes took care of the rest and gave me an accessible IP address that I could visit to see my backend API.
 
-Kubernetes is a very efficient tool when it comes to microservices, as we often have many microservices, each with its own Docker image, and we need a container for each one. As our services grow, things can become complicated, but with Kubernetes, we can manage them easily. For example, in the [Fuilder](https://github.com/mustafaelghrib/fuilder) project, which is a dynamic form builder, each service has its own Kubernetes deployment and service files that are managed by one Kubernetes instance.
+Kubernetes is a very efficient tool when it comes to microservices, as we often have many microservices, each with its own Docker image, and we need a container for each one. As our services grow, things can become complicated, but with Kubernetes, we can manage them easily. For example, in the [Fuilder](https://github.com/moustafaelghrib/fuilder) project, which is a dynamic form builder, each service has its own Kubernetes deployment and service files that are managed by one Kubernetes instance.
 
 ## Conclusion
-All methods of deployment work, and any one of them could be ideal for you based on your requirements. I have seen many projects that only require Nginx and an Ubuntu server to be deployed and don't actually need advanced technologies like Docker and Kubernetes. I hope this article has been helpful for you, and feel free to follow me for more articles like this or to ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaelghrib).
+All methods of deployment work, and any one of them could be ideal for you based on your requirements. I have seen many projects that only require Nginx and an Ubuntu server to be deployed and don't actually need advanced technologies like Docker and Kubernetes. I hope this article has been helpful for you, and feel free to follow me for more articles like this or to ask me anything related on my [LinkedIn](https://linkedin.com/in/moustafaelghrib).
 
 
