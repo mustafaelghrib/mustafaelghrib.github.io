@@ -38,7 +38,7 @@ is relatively straightforward. We can write the infrastructure code for one back
 a single file or use modules if we have a more complex infrastructure. Ultimately, we're 
 dealing with just one thing, so it's much simpler compared to implementing microservices architecture.
 
-For example, in my latest project, I built a [PDF-to-HTML document converter](https://github.com/mstva/docorvter) 
+For example, in my latest project, I built a [PDF-to-HTML document converter](https://github.com/mustafaelghrib/docorvter) 
 using a monolithic architecture. I deployed this backend API on AWS infrastructure using 
 Terraform, and I only needed to use AWS S3 and AWS RDS. As a result, my Terraform folder 
 was quite simple, as shown below:
@@ -64,7 +64,7 @@ we created a module for the common cloud infrastructure and then created a separ
 for each service that used this common module. With this approach, we were able to avoid code 
 duplication and manage services more easily.
 
-For example, in my latest project, I built a [form builder](https://github.com/mstva/fuilder) 
+For example, in my latest project, I built a [form builder](https://github.com/mustafaelghrib/fuilder) 
 using microservices architecture, and I needed to deploy the infrastructure on Google Cloud 
 Platform (GCP). I had three services, each of which needed a Google Storage Bucket and a 
 Google SQL Database. To accomplish this, I created modules for GCP to provision these 
