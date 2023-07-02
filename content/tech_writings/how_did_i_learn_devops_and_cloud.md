@@ -35,7 +35,7 @@ arabic_location: الإسكندرية، مصر
 
 ## إيه المصادر اللي أتعلمت منها؟
 
-أنا [كتبت بوست على لينكدان](https://www.linkedin.com/posts/mustafaelghrib_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096-_n3h/) فيه كل الكورسات اللي أخداتها والمشاريع اللي عملتها، بالإضافة لل Documentation بتاع كل الادوات دي، وكنت ببحث وأشوف فيديوهات على اليوتيوب للحجات اللي مكنتش فاهمها منها قنوات ذي [FreeCodeCamp](https://www.youtube.com/c/Freecodecamp) و [TechWorld with Nana](https://www.youtube.com/c/techworldwithnana) وقناة [باشمهندس محمد رضوان](https://www.youtube.com/channel/UC-G5jjBDFow_FRXql0t1JMQ) ومع ظهور ال ChatGPT بقى بيساعدني في حتة ال 
+أنا [كتبت بوست على لينكدان](https://www.linkedin.com/posts/mustafaelghrib_i-recently-improved-my-skills-in-microservices-activity-7050936883920388096--qJB/) فيه كل الكورسات اللي أخداتها والمشاريع اللي عملتها، بالإضافة لل Documentation بتاع كل الادوات دي، وكنت ببحث وأشوف فيديوهات على اليوتيوب للحجات اللي مكنتش فاهمها منها قنوات ذي [FreeCodeCamp](https://www.youtube.com/c/Freecodecamp) و [TechWorld with Nana](https://www.youtube.com/c/techworldwithnana) وقناة [باشمهندس محمد رضوان](https://www.youtube.com/channel/UC-G5jjBDFow_FRXql0t1JMQ) ومع ظهور ال ChatGPT بقى بيساعدني في حتة ال 
 planning.
 
 ## الملخص
