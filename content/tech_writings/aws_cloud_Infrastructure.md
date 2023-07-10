@@ -6,7 +6,7 @@ location: Minya, Egypt
 ---
 
 # Introduction
-After I wrote on [how to build a cloud infrastructure](https://mustafaelghrib.github.io/how_to_build_cloud_infrastructure/), I decided to implement real world projects to show how you could build your own and follow best practices. Today I am writing on how to build a cloud infrastructure for backend API on AWS.
+After I wrote about [how to build a cloud infrastructure](https://mustafaelghrib.github.io/how_to_build_cloud_infrastructure/), I decided to implement real-world projects to demonstrate how you could build your own and follow best practices. Today, I am writing about how to build a cloud infrastructure for a backend API on AWS.
 
 {{< figure src="/posts/aws_cloud_infrastructure.png" width="100%" >}}
 
@@ -22,30 +22,30 @@ After I wrote on [how to build a cloud infrastructure](https://mustafaelghrib.gi
 - [Conclusion](#conclusion)
 
 # Our Project
-The project that we will work on it is a backend API that is built with Python, Django and PostgresSQL and conteriezied with Docker, you could find it [at this repo](https://github.com/mustafaelghrib/crewtech/tree/main/backend), clone it on you local computer and let's start building.
+The project we will work on is a backend API built with Python, Django, and PostgreSQL, and containerized with Docker. You can find it [in this repository](https://github.com/mustafaelghrib/crewtech/tree/main/backend), clone it to your local computer, and let's begin building.
 
-Note: This project could be any with any tech stack, the steps will be the same after all.
+Note: This project could be built with any tech stack, but the steps will remain the same.
 
 # Building The Cloud Infrastructure
-So we have the project is set up and ready to go for production, and we want to deploy it to the cloud, and to do that we need to build the cloud infrastructure, so let's follow this steps to build it.
+So, we have the project set up and ready to go for production. Now, our goal is to deploy it to the cloud. To achieve that, we need to build the cloud infrastructure. Let's follow these steps to build it.
 
 ## Define
-Our goal here is to just deploy this simple backend API, so it could be available on the internet and other people could access it.
+Our goal here is to deploy this simple backend API, making it available on the internet for others to access.
 
-To deploy it, we need to choose a deployment method, I wrote about some of them [at this article](https://mustafaelghrib.github.io/methods_of_deployment_with_examples/), but let's say we want to deploy it using docker on remote server.
+To accomplish this, we need to choose a deployment method. I have written about some of them [in this article](https://mustafaelghrib.github.io/methods_of_deployment_with_examples/), but let's assume we want to deploy it using Docker on a remote server.
 
-So this defines what we actually need from the cloud, and from the things above we need:
-- Docker registry so we could push and pull docker images from it.
-- Remote server so we could access our backend api from it.
-- PostgresSQL database as our backend API uses it.
-- Storage as our backend API needs to save and retrieve static and media files.
+This outlines our requirements from the cloud, and based on the information above, we need:
+
+- Docker registry to push and pull Docker images.
+- Remote server to host our backend API.
+- PostgreSQL database for our backend API.
+- Storage for saving and retrieving static and media files used by our backend API.
 
 ## Choose
-For this article we have chosen AWS as the cloud platform that will deploy our backend on it.
-You need to create an AWS account as we will use it in the implementation step.
+For this article, we have chosen AWS as the cloud platform to deploy our backend. You will need to create an AWS account as we will be using it during the implementation step.
 
 ## Plan
-Let's match the services we want with the services provided by AWS and wrote the initial configration that we want for those services.
+Let's align the services we require with the services provided by AWS and document the initial configuration we need for each of those services.
 
 | Our Service          | AWS Service | Configration                                    |
 |----------------------|-------------|-------------------------------------------------|
@@ -55,27 +55,27 @@ Let's match the services we want with the services provided by AWS and wrote the
 | Storage              | AWS S3      | Access Type: Public                             |
 
 ## Design
-Our design is very simple, we won't consider networking or security for now as it will make our design very complex, so let's focus on the services that we need only for now.
+Our design is intentionally kept simple for now, without considering networking or security aspects, to avoid unnecessary complexity. Let's focus on the services we currently need.
 
-The design as shown below, is just the user access the IP address of the AWS EC2 instance and the AWS EC2 instance should run a Docker container from the Docker image that puled from the AWS ECR repository, this Docker image contain our code, and our code is set up to access the postgres database in the AWS RDS and the storage in the AWS S3.
+The design, as shown below, involves users accessing the IP address of the AWS EC2 instance. The EC2 instance runs a Docker container from the Docker image pulled from the AWS ECR repository. This Docker image contains our code, which is configured to access the PostgreSQL database in AWS RDS and the storage in AWS S3.
 
 {{< figure src="/images/cloud_infrastructure_diagram.png" width="100%" >}}
 
 I used [draw.io](https://app.diagrams.net/?splash=0&libs=aws4) to do this diagram.
 
 ## Implement
-We have more than one way to implement this cloud infrastructure on AWS, all of them work but one will be best based on your requirements and complexity of your project.
+We have multiple options for implementing this cloud infrastructure on AWS, all of which are effective. However, the best approach will depend on your specific requirements and the complexity of your project.
 
-- **AWS Management Console**: The web interface of AWS, where you could create them one by one on their dashboard.
-- **AWS CLI**: The command line, where you could create them using terminal.
-- **AWS CloudFormation**: The IaC tool by AWS where you could provision services using YML.
-- **AWS CDK**: Another IaC tool by AWS where you could provision services using programming languages like Python, TypeScript or Java.
-- **Terraform**: IaC tool provided by HashiCorp, and they have AWS provider where we could use it to provision our AWS resources.
+- **AWS Management Console**: The web interface provided by AWS, where you can manually create the resources one by one through their dashboard.
+- **AWS CLI**: The AWS Command Line Interface allows you to create resources using the command line in a terminal.
+- **AWS CloudFormation**: AWS CloudFormation is an Infrastructure as Code (IaC) tool provided by AWS, where you can provision services using YAML.
+- **AWS CDK**: AWS CDK is another IaC tool by AWS that enables you to provision services using programming languages like Python, TypeScript, or Java.
+- **Terraform**: Terraform is an IaC tool provided by HashiCorp. It has an AWS provider that allows you to provision AWS resources.
 
-In this article we will use Terraform to create those AWS resources. Make sure to install it.
+In this article, we will use Terraform to create the AWS resources. Make sure to install it.
 
 ### The infrastructure folder
-Let's create a new folder and name it **_infrastructure_** in the root directory of our project, and here is what it will contain.
+Let's create a new folder named **infrastructure** in the root directory of our project. Here is what it will contain:
 ```shell
 ├── secrets.auto.tfvars  # contains secrets, make sure to ignore it
 ├── main.tf
@@ -92,7 +92,7 @@ Let's create a new folder and name it **_infrastructure_** in the root directory
 ```
 
 ### Set up AWS provider on Terraform
-We need to set up the AWS provider, so we could use it in Terraform, so in the **_main.tf_** file we will write this:
+We need to configure the AWS provider so that we can use it in Terraform. In the **main.tf** file, we will add the following configuration:
 ```hcl
 terraform {
   required_version = "1.3.1"
@@ -111,7 +111,7 @@ provider "aws" {
 }
 ```
 
-We need to add AWS credential as secrets, make sure to ignore this file, in a file named **_secrets.auto.tfvars_** we write this:
+To securely store AWS credentials, we will create a file named **secrets.auto.tfvars**. Please ensure that this file is ignored and not committed to version control. In the **secrets.auto.tfvars** file, we will add the following content:
 ```hcl
 aws = {
   region     = "" # your aws region
@@ -120,7 +120,7 @@ aws = {
 } 
 ```
 
-Run the terraform init command to ensure that everything is working
+Run the following command to initialize Terraform and ensure that everything is working correctly:
 ```shell
 terraform init
 ```
@@ -285,19 +285,19 @@ output "aws" {
 ```
 
 ### Apply our infrastructure
-Now as all our resources we need is provisioned, we need to apply them so Terraform could create them on AWS, so run terraform apply.
+Now that all the necessary resources are provisioned, we can apply them using Terraform to create them on AWS.
 ```shell
 terraform apply
 ```
 
 ### Get the output
-If everything is working correctly, then our infrastructure is set up, and now we could get the output, so we could use those values when we deploy our code.
+If everything is working correctly, your infrastructure should be set up. You can now retrieve the output values from Terraform, which can be used when deploying your code.
 ```shell
 terraform output aws
 ```
 
 ## Deploy
-You could actually deploy manually and automatically using any CI/CD tool and I did both. For instructions on how to do that you could read [this section](https://github.com/mustafaelghrib/crewtech#deployment) from the README file of this project.
+You can deploy the project manually or automatically using any CI/CD tool. For instructions on how to do this, please refer to [this section](https://github.com/mustafaelghrib/crewtech#deployment) in this project's README file.
 
 # Conclusion
-AWS is a cloud provider and become an industry trend and many organizations may use AWS to build their cloud infrastructure so knowing how to build it is a great, but you should follow best practices and defined steps, so you could produce high quality work. I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaelghrib). 
+AWS is a popular cloud provider and an industry trend. Many organizations utilize AWS to build their cloud infrastructure. Knowing how to build on AWS is valuable, but it's crucial to follow best practices and defined steps to ensure high-quality work. I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my [LinkedIn](https://linkedin.com/in/mustafaelghrib). 
