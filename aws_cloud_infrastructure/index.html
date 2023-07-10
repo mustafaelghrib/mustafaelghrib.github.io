@@ -1,0 +1,177 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>AWS Cloud Infrastructure: Step-by-Step Guide
+- Mustafa Elghrib
+- 10 July 2023
+- Minya, Egypt</title><meta name=keywords content><meta name=description content="AWS Cloud Infrastructure: Step-by-Step Guide - mustafaelghrib"><link rel=canonical href=https://mustafaelghrib.github.io/aws_cloud_infrastructure/><link crossorigin=anonymous href=/assets/css/stylesheet.d7589302ec16533051bdcca8c66033b4d13bac695fcd944fe907f1b3c0bb81c7.css integrity="sha256-11iTAuwWUzBRvcyoxmAztNE7rGlfzZRP6Qfxs8C7gcc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://mustafaelghrib.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://mustafaelghrib.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://mustafaelghrib.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://mustafaelghrib.github.io/apple-touch-icon.png><link rel=mask-icon href=https://mustafaelghrib.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://mustafaelghrib.github.io/ accesskey=h title="mustafaelghrib (Alt + H)">mustafaelghrib</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://mustafaelghrib.github.io/tech_writings/ title=tech_writings><span>tech_writings</span></a></li><li><a href=https://mustafaelghrib.github.io/arabic_writings/ title=كتاباتي_بالعربية><span>كتاباتي_بالعربية</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>AWS Cloud Infrastructure: Step-by-Step Guide</h1><p class=post-date>Mustafa Elghrib - 10 July 2023 - Minya, Egypt</p><hr></header><div class=post-content><h1 id=introduction>Introduction</h1><p>After I wrote about <a href=https://mustafaelghrib.github.io/how_to_build_cloud_infrastructure/>how to build a cloud infrastructure</a>, I decided to implement real-world projects to demonstrate how you could build your own and follow best practices. Today, I am writing about how to build a cloud infrastructure for a backend API on AWS.</p><figure><img src=/posts/aws_cloud_infrastructure.png width=100%></figure><h1 id=contents>Contents</h1><ul><li><a href=#our-project>Our Project</a></li><li><a href=#building-the-cloud-infrastructure>Building The Cloud Infrastructure</a><ul><li><a href=#define>Define</a></li><li><a href=#choose>Choose</a></li><li><a href=#plan>Plan</a></li><li><a href=#design>Design</a></li><li><a href=#implement>Implement</a></li><li><a href=#deploy>Deploy</a></li></ul></li><li><a href=#conclusion>Conclusion</a></li></ul><h1 id=our-project>Our Project</h1><p>The project we will work on is a backend API built with Python, Django, and PostgreSQL, and containerized with Docker. You can find it <a href=https://github.com/mustafaelghrib/crewtech/tree/main/backend>in this repository</a>, clone it to your local computer, and let&rsquo;s begin building.</p><p>Note: This project could be built with any tech stack, but the steps will remain the same.</p><h1 id=building-the-cloud-infrastructure>Building The Cloud Infrastructure</h1><p>So, we have the project set up and ready to go for production. Now, our goal is to deploy it to the cloud. To achieve that, we need to build the cloud infrastructure. Let&rsquo;s follow these steps to build it.</p><h2 id=define>Define</h2><p>Our goal here is to deploy this simple backend API, making it available on the internet for others to access.</p><p>To accomplish this, we need to choose a deployment method. I have written about some of them <a href=https://mustafaelghrib.github.io/methods_of_deployment_with_examples/>in this article</a>, but let&rsquo;s assume we want to deploy it using Docker on a remote server.</p><p>This outlines our requirements from the cloud, and based on the information above, we need:</p><ul><li>Docker registry to push and pull Docker images.</li><li>Remote server to host our backend API.</li><li>PostgreSQL database for our backend API.</li><li>Storage for saving and retrieving static and media files used by our backend API.</li></ul><h2 id=choose>Choose</h2><p>For this article, we have chosen AWS as the cloud platform to deploy our backend. You will need to create an AWS account as we will be using it during the implementation step.</p><h2 id=plan>Plan</h2><p>Let&rsquo;s align the services we require with the services provided by AWS and document the initial configuration we need for each of those services.</p><table><thead><tr><th>Our Service</th><th>AWS Service</th><th>Configration</th></tr></thead><tbody><tr><td>Docker Registry</td><td>AWS ECR</td><td>Repository Type: Public</td></tr><tr><td>Remote Server</td><td>AWS EC2</td><td>OS: Ubuntu, CPU: t2.micro, Volume: 20G</td></tr><tr><td>PostgresSQL Database</td><td>AWS RDS</td><td>Engine: Postgres, CPU: db.t3.micro, Volume: 20G</td></tr><tr><td>Storage</td><td>AWS S3</td><td>Access Type: Public</td></tr></tbody></table><h2 id=design>Design</h2><p>Our design is intentionally kept simple for now, without considering networking or security aspects, to avoid unnecessary complexity. Let&rsquo;s focus on the services we currently need.</p><p>The design, as shown below, involves users accessing the IP address of the AWS EC2 instance. The EC2 instance runs a Docker container from the Docker image pulled from the AWS ECR repository. This Docker image contains our code, which is configured to access the PostgreSQL database in AWS RDS and the storage in AWS S3.</p><figure><img src=/images/cloud_infrastructure_diagram.png width=100%></figure><p>I used <a href="https://app.diagrams.net/?splash=0&amp;libs=aws4">draw.io</a> to do this diagram.</p><h2 id=implement>Implement</h2><p>We have multiple options for implementing this cloud infrastructure on AWS, all of which are effective. However, the best approach will depend on your specific requirements and the complexity of your project.</p><ul><li><strong>AWS Management Console</strong>: The web interface provided by AWS, where you can manually create the resources one by one through their dashboard.</li><li><strong>AWS CLI</strong>: The AWS Command Line Interface allows you to create resources using the command line in a terminal.</li><li><strong>AWS CloudFormation</strong>: AWS CloudFormation is an Infrastructure as Code (IaC) tool provided by AWS, where you can provision services using YAML.</li><li><strong>AWS CDK</strong>: AWS CDK is another IaC tool by AWS that enables you to provision services using programming languages like Python, TypeScript, or Java.</li><li><strong>Terraform</strong>: Terraform is an IaC tool provided by HashiCorp. It has an AWS provider that allows you to provision AWS resources.</li></ul><p>In this article, we will use Terraform to create the AWS resources. Make sure to install it.</p><h3 id=the-infrastructure-folder>The infrastructure folder</h3><p>Let&rsquo;s create a new folder named <strong>infrastructure</strong> in the root directory of our project. Here is what it will contain:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>├── secrets.auto.tfvars  <span style=color:#75715e># contains secrets, make sure to ignore it</span>
+</span></span><span style=display:flex><span>├── main.tf
+</span></span><span style=display:flex><span>├── aws                  <span style=color:#75715e># aws module that contains aws resources</span>
+</span></span><span style=display:flex><span>│    ├── EC2.tf
+</span></span><span style=display:flex><span>│    ├── ECR.tf
+</span></span><span style=display:flex><span>│    ├── RDS.tf
+</span></span><span style=display:flex><span>│    ├── S3.tf
+</span></span><span style=display:flex><span>├── ssh                  <span style=color:#75715e># bring your ssh keys, make sure you ignore them</span>
+</span></span><span style=display:flex><span>│    ├── id_rsa.pub
+</span></span><span style=display:flex><span>│    ├── id_rsa
+</span></span><span style=display:flex><span>└── scripts
+</span></span><span style=display:flex><span>    └── install_docker.sh
+</span></span></code></pre></div><h3 id=set-up-aws-provider-on-terraform>Set up AWS provider on Terraform</h3><p>We need to configure the AWS provider so that we can use it in Terraform. In the <strong>main.tf</strong> file, we will add the following configuration:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#66d9ef>terraform</span> {
+</span></span><span style=display:flex><span>  required_version <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1.3.1&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>required_providers</span> {
+</span></span><span style=display:flex><span>    aws <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      source  <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hashicorp/aws&#34;</span>
+</span></span><span style=display:flex><span>      version <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;~&gt; 4.0&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>provider</span> <span style=color:#e6db74>&#34;aws&#34;</span> {
+</span></span><span style=display:flex><span>  region     <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>aws</span>.<span style=color:#66d9ef>region</span>
+</span></span><span style=display:flex><span>  access_key <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>aws</span>.<span style=color:#66d9ef>access_key</span>
+</span></span><span style=display:flex><span>  secret_key <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>aws</span>.<span style=color:#66d9ef>secret_key</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>To securely store AWS credentials, we will create a file named <strong>secrets.auto.tfvars</strong>. Please ensure that this file is ignored and not committed to version control. In the <strong>secrets.auto.tfvars</strong> file, we will add the following content:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span>aws <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>  region     <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#75715e> # your aws region
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  access_key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#75715e> # your aws access key
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  secret_key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#75715e> # your aws secert key
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} 
+</span></span></code></pre></div><p>Run the following command to initialize Terraform and ensure that everything is working correctly:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>terraform init
+</span></span></code></pre></div><h3 id=provision-aws-ec2>Provision AWS EC2</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#75715e># aws/EC2.tf
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>terraform</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>required_providers</span> {
+</span></span><span style=display:flex><span>    aws <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      source <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hashicorp/aws&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_key_pair&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span> key_name   <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-ssh-key&#34;</span>
+</span></span><span style=display:flex><span> public_key <span style=color:#f92672>=</span> <span style=color:#66d9ef>file</span>(<span style=color:#e6db74>&#34;${path.module}/ssh/id_rsa.pub&#34;</span>)
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_instance&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span> tags          <span style=color:#f92672>=</span> { &#34;Name&#34; <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-instance&#34;</span> }
+</span></span><span style=display:flex><span> ami           <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ami-08c40ec9ead489470&#34;</span>
+</span></span><span style=display:flex><span> instance_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;t2.micro&#34;</span>
+</span></span><span style=display:flex><span> key_name      <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_key_pair</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>key_name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>root_block_device</span> {
+</span></span><span style=display:flex><span>   volume_size <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;20&#34;</span>
+</span></span><span style=display:flex><span>   volume_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;gp2&#34;</span>
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>connection</span> {
+</span></span><span style=display:flex><span>   type        <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ssh&#34;</span>
+</span></span><span style=display:flex><span>   user        <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ubuntu&#34;</span>
+</span></span><span style=display:flex><span>   host        <span style=color:#f92672>=</span> <span style=color:#66d9ef>self</span>.<span style=color:#66d9ef>public_dns</span>
+</span></span><span style=display:flex><span>   private_key <span style=color:#f92672>=</span> <span style=color:#66d9ef>file</span>(<span style=color:#e6db74>&#34;${path.module}/ssh/id_rsa&#34;</span>)
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>provisioner</span> <span style=color:#e6db74>&#34;remote-exec&#34;</span> {
+</span></span><span style=display:flex><span>   scripts <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;${path.module}/scripts/install_docker.sh&#34;</span>]
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>output &#34;INSTANCE_USER&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>instance_user</span> }
+</span></span><span style=display:flex><span>output &#34;INSTANCE_IP&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_instance</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>public_dns</span> }
+</span></span><span style=display:flex><span>output &#34;INSTANCE_SSH_CONNECT&#34; { value <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ssh ${var.instance_user}@${aws_instance.main.public_dns}&#34;</span> }
+</span></span></code></pre></div><h3 id=provision-aws-rds>Provision AWS RDS</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#75715e># aws/RDS.tf
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>terraform</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>required_providers</span> {
+</span></span><span style=display:flex><span>    aws <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      source <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hashicorp/aws&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_db_instance&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  identifier <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-database&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  db_name  <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-db&#34;</span>
+</span></span><span style=display:flex><span>  username <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-user&#34;</span>
+</span></span><span style=display:flex><span>  password <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>database_password</span><span style=color:#75715e> # save it in the secrets.auto.tfvars file
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  port     <span style=color:#f92672>=</span> <span style=color:#ae81ff>5432</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  engine         <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;postgres&#34;</span>
+</span></span><span style=display:flex><span>  engine_version <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;13.7&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  instance_class    <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;db.t3.micro&#34;</span>
+</span></span><span style=display:flex><span>  storage_type      <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;gp2&#34;</span>
+</span></span><span style=display:flex><span>  allocated_storage <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;20&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  publicly_accessible      <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  delete_automated_backups <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  skip_final_snapshot      <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  deletion_protection      <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>output &#34;POSTGRES_DB&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_db_instance</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>db_name</span> }
+</span></span><span style=display:flex><span>output &#34;POSTGRES_USER&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_db_instance</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>username</span> }
+</span></span><span style=display:flex><span>output &#34;POSTGRES_PASSWORD&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_db_instance</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>password</span> }
+</span></span><span style=display:flex><span>output &#34;POSTGRES_HOST&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_db_instance</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>address</span> }
+</span></span><span style=display:flex><span>output &#34;POSTGRES_PORT&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_db_instance</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>port</span> }
+</span></span></code></pre></div><h3 id=provision-aws-s3>Provision AWS S3</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#75715e># aws/S3.tf
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>terraform</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>required_providers</span> {
+</span></span><span style=display:flex><span>    aws <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      source <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hashicorp/aws&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_s3_bucket&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span>  bucket        <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-bucket&#34;</span>
+</span></span><span style=display:flex><span>  force_destroy <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_s3_bucket_acl&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span>  bucket <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_s3_bucket</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>id</span>
+</span></span><span style=display:flex><span>  acl    <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;public&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_s3_bucket_public_access_block&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span>  bucket                  <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_s3_bucket</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>id</span>
+</span></span><span style=display:flex><span>  block_public_acls       <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  block_public_policy     <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  ignore_public_acls      <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  restrict_public_buckets <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>output &#34;AWS_ACCESS_KEY_ID&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>bucket_access_key</span> }
+</span></span><span style=display:flex><span>output &#34;AWS_SECRET_ACCESS_KEY&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>var</span>.<span style=color:#66d9ef>bucket_secret_key</span> }
+</span></span><span style=display:flex><span>output &#34;AWS_STORAGE_BUCKET_NAME&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_s3_bucket</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>bucket</span> }
+</span></span><span style=display:flex><span>output &#34;AWS_BUCKET_DOMAIN_NAME&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_s3_bucket</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>bucket_domain_name</span> }
+</span></span></code></pre></div><h3 id=provision-aws-ecr>Provision AWS ECR</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#75715e># aws/ECR.tf
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>terraform</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>required_providers</span> {
+</span></span><span style=display:flex><span>    aws <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      source <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hashicorp/aws&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;aws_ecr_repository&#34; &#34;main&#34;</span> {
+</span></span><span style=display:flex><span>  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;example-project-repository&#34;</span>
+</span></span><span style=display:flex><span>  force_delete <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>output &#34;REPOSITORY_URL&#34; { value <span style=color:#f92672>=</span> <span style=color:#66d9ef>aws_ecr_repository</span>.<span style=color:#66d9ef>main</span>.<span style=color:#66d9ef>repository_url</span> }
+</span></span></code></pre></div><h3 id=add-them-to-the-main>Add them to the main</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-hcl data-lang=hcl><span style=display:flex><span><span style=color:#75715e># main.tf
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>module</span> <span style=color:#e6db74>&#34;aws&#34;</span> {
+</span></span><span style=display:flex><span>  source <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./aws&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>output</span> <span style=color:#e6db74>&#34;aws&#34;</span> {
+</span></span><span style=display:flex><span>  value     <span style=color:#f92672>=</span> <span style=color:#66d9ef>module</span>.<span style=color:#66d9ef>aws</span>
+</span></span><span style=display:flex><span>  sensitive <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=apply-our-infrastructure>Apply our infrastructure</h3><p>Now that all the necessary resources are provisioned, we can apply them using Terraform to create them on AWS.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>terraform apply
+</span></span></code></pre></div><h3 id=get-the-output>Get the output</h3><p>If everything is working correctly, your infrastructure should be set up. You can now retrieve the output values from Terraform, which can be used when deploying your code.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>terraform output aws
+</span></span></code></pre></div><h2 id=deploy>Deploy</h2><p>You can deploy the project manually or automatically using any CI/CD tool. For instructions on how to do this, please refer to <a href=https://github.com/mustafaelghrib/crewtech#deployment>this section</a> in this project&rsquo;s README file.</p><h1 id=conclusion>Conclusion</h1><p>AWS is a popular cloud provider and an industry trend. Many organizations utilize AWS to build their cloud infrastructure. Knowing how to build on AWS is valuable, but it&rsquo;s crucial to follow best practices and defined steps to ensure high-quality work. I hope this article has been helpful for you, and feel free to follow me for more articles like this or ask me anything related on my <a href=https://linkedin.com/in/mustafaelghrib>LinkedIn</a>.</p></div></article></main><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild===n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName==="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
